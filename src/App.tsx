@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import styled from "styled-components"
 
-import Naver from "./api/Naver"
+import NaverSearchBook from "./api/NaverSearchBook"
 
 const Grid = styled.div`
     display: flex;
@@ -30,7 +30,7 @@ export default function App() {
     const [bookName, setBookName] = useState<string>("")
     const [books, setBooks] = useState<any[]>([])
     useEffect(() => {
-        const naverApi = Naver()
+        const naverApi = NaverSearchBook()
         naverApi
             .search(bookName)
             .then(response => setBooks(response.data.items))
@@ -44,7 +44,7 @@ export default function App() {
     return (
         <>
             <Input value={bookName} onChange={changeBookName} />
-            <Button>쌈@뽕한 버튼</Button>
+            <Button>버튼</Button>
             <Grid>
                 {books.map((book: any, key: any) => (
                     <Wrapper key={key}>
