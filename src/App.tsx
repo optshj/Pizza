@@ -44,7 +44,6 @@ export default function App() {
     return (
         <>
             <Input value={bookName} onChange={changeBookName} />
-            <Button>버튼</Button>
             <Grid>
                 {books.map((book: any, key: any) => (
                     <Wrapper key={key}>
