@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import styled from "styled-components"
+
 import Naver from "./api/Naver"
 
 const Grid = styled.div`
@@ -24,10 +25,6 @@ const Button = styled.button`
     color: red;
     border: 1px solid gray;
 `
-const Font = styled.div`
-    font-size: 60px;
-    color: #cb3d3f;
-`
 
 export default function App() {
     const [bookName, setBookName] = useState<string>("")
@@ -38,7 +35,7 @@ export default function App() {
             .search(bookName)
             .then(response => setBooks(response.data.items))
             .catch(e => {
-                console.log(e)
+                console.error(e)
             })
     }, [bookName])
     const changeBookName = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -46,7 +43,7 @@ export default function App() {
     }
     return (
         <>
-            <Input value={bookName} onChange={changeBookName} placeholder="책 이름?" />
+            <Input value={bookName} onChange={changeBookName} />
             <Button>쌈@뽕한 버튼</Button>
             <Grid>
                 {books.map((book: any, key: any) => (
@@ -57,7 +54,6 @@ export default function App() {
                     </Wrapper>
                 ))}
             </Grid>
-            <Font>폰트 ABC</Font>
         </>
     )
 }
