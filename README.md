@@ -1,46 +1,58 @@
-# Getting Started with Create React App
+# 아래의 글을 읽어주세요!
+1. 사이트 실행하기
+    * 배포된 사이트 접속하기
+    * 로컬에서 실행하기
+2. Branch에 대해
+3. Commit Convention
+4. Prettier(코드 정리기능) 사용하기
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 사이트 실행하기
+### 배포된 사이트 접속하기
+[사이트 바로가기 (북마크하시면 편해요)](https://ddeoknip.github.io/Pizza/)
 
-## Available Scripts
+### 로컬에서 실행하기
+터미널에서 아래 명령어를 입력하시면 localhost에서 실행할 수 있어요.
 
-In the project directory, you can run:
+실행전에 패키지를 설치 안하셨으면-> npm i
+```
+npm start
+```
 
-### `npm start`
+## Branch에 대해
+브런치는 아래의 5종류입니다.
+* `main` : main 브런치
+* `gh-pages` : 배포 페이지 브런치
+* `ahn` : 혜림 브런치
+* `kim` : 정현 브런치
+* `lee` : 성빈 브런치
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+레포지토리로 fork를 해서 가져간 뒤 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+각자 브런치에서 작업을 한 뒤 `main`으로 `pull request` 를 보내세요.
 
-### `npm test`
+`main` 에 적용된 내용은 자동으로 `gh-pages`  를 통해 배포됩니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Commit Convention
+커밋 메시지를 작성하실 때 자세히 작성해준시다면 효율적인 작업에 도움이 됩니다.
 
-### `npm run build`
+```
+커밋 컨벤션 예시
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+git commit -m "[Feat] 카카오 api 추가"
+git commit -m "[Docs] /src/asset/charater.svg 추가"
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* `Feat` : 새로운 기능 추가
+* `Fix` : 버그 수정
+* `Docs` : 문서 수정
+* `Style` : 코드 포맷팅, 세미콜론 누락, 코드 변경이 없는 경우
+* `Refactor` : 코드 리펙토링
+* `etc` : 기타
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Prettier 사용하기
+Prettier는 코드를 자동으로 깔끔하게 보이게 만들어주는 기능입니다.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+아래의 명령어를 사용하면 사용하실 수 있습니다.
+```
+npm run format
+```
