@@ -21,10 +21,6 @@ const Input = styled.input`
     border: 1px solid red;
     font-size: 60px;
 `
-const Button = styled.button`
-    color: red;
-    border: 1px solid gray;
-`
 
 export default function App() {
     const [bookName, setBookName] = useState<string>("")
