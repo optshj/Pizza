@@ -24,6 +24,10 @@ const Button = styled.button`
     color: red;
     border: 1px solid gray;
 `
+const Font = styled.div`
+    font-size: 60px;
+    color: #cb3d3f;
+`
 
 export default function App() {
     const [bookName, setBookName] = useState<string>("")
@@ -50,10 +54,10 @@ export default function App() {
                         <Title>{book.author}</Title>
                         <Title>{book.title}</Title>
                         <Title>{book.description}</Title>
-                        <img src={book.image} alt="book" />
                     </Wrapper>
                 ))}
             </Grid>
+            <Font>폰트 ABC</Font>
         </>
     )
 }
