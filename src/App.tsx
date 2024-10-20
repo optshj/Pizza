@@ -29,7 +29,7 @@ export default function App() {
         const kakao = Kakao()
         kakao
             .search(bookName)
-            .then(response => console.log(response))
+            .then(response => setBooks(response.data.documents))
             .catch(e => {
                 console.error(e)
             })
@@ -45,7 +45,8 @@ export default function App() {
                     <Wrapper key={key}>
                         <Title>{book.author}</Title>
                         <Title>{book.title}</Title>
-                        <Title>{book.description}</Title>
+                        <Title>{book.contents}</Title>
+                        <img src={book.thumbnail} alt="bookImage" />
                     </Wrapper>
                 ))}
             </Grid>
