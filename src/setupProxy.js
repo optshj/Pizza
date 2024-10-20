@@ -4,7 +4,7 @@ module.exports = app => {
     app.use(
         "/api",
         createProxyMiddleware({
-            target: "https://openapi.naver.com",
+            target: "https://dapi.kakao.com",
             changeOrigin: true
         })
     )

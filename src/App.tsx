@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import styled from "styled-components"
 
-import NaverSearchBook from "./api/NaverSearchBook"
+import Kakao from "./api/KakaoAPI"
 
 const Grid = styled.div`
     display: flex;
@@ -26,10 +26,10 @@ export default function App() {
     const [bookName, setBookName] = useState<string>("")
     const [books, setBooks] = useState<any[]>([])
     useEffect(() => {
-        const naverApi = NaverSearchBook()
-        naverApi
+        const kakao = Kakao()
+        kakao
             .search(bookName)
-            .then(response => setBooks(response.data.items))
+            .then(response => console.log(response))
             .catch(e => {
                 console.error(e)
             })
