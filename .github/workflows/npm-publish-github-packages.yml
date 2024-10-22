@@ -21,12 +21,6 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: access to secrets
-      run: |
-        echo "REACT_APP_KAKAO_KEY=$REACT_APP_KAKAO_KEY" >> .env
-      env:
-        KAKAO_API_KEY: ${{secrets.REACT_APP_KAKAO_KEY}}
-        
     - name: Build
       run: npm run build
       
