@@ -20,7 +20,12 @@ jobs:
 
     - name: Install dependencies
       run: npm install
-
+      
+    - name: access to secrets
+      run: |
+        echo "REACT_APP_KAKAO_KEY=$REACT_APP_KAKAO_KEY" >> .env
+      env:
+        KAKAO_API_KEY: ${{secrets.REACT_APP_KAKAO_KEY}}
     - name: Build
       run: npm run build
       
@@ -28,4 +33,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN}}
-        publish_dir: ./buil
+        publish_dir: ./build
