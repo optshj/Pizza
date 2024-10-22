@@ -3,7 +3,7 @@ import axios from "axios"
 export default function bookSearch() {
     return {
         search: (name: string) =>
-            axios.get(`/api/v3/search/book?target=title`, {
+            axios.get(`https://dapi.kakao.com/v3/search/book?target=title`, {
                 params: { query: name },
                 headers: {
                     Authorization: `KakaoAK ${process.env.REACT_APP_KAKAO_KEY}`,
