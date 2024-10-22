@@ -23,9 +23,7 @@ jobs:
       
     - name: access to secrets
       run: |
-        echo "REACT_APP_KAKAO_KEY=$REACT_APP_KAKAO_KEY" >> .env
-      env:
-        KAKAO_API_KEY: ${{secrets.REACT_APP_KAKAO_KEY}}
+        echo "REACT_APP_KAKAO_KEY=${{secrets.REACT_APP_KAKAO_KEY}}" >> .env
     - name: Build
       run: npm run build
       
