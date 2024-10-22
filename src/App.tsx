@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import styled from "styled-components"
-import Naver from "./api/Naver"
+
+import Kakao from "./api/KakaoAPI"
 
 const Grid = styled.div`
     display: flex;
@@ -20,25 +21,17 @@ const Input = styled.input`
     border: 1px solid red;
     font-size: 60px;
 `
-const Button = styled.button`
-    color: red;
-    border: 1px solid gray;
-`
-const Font = styled.div`
-    font-size: 60px;
-    color: #cb3d3f;
-`
 
 export default function App() {
     const [bookName, setBookName] = useState<string>("")
     const [books, setBooks] = useState<any[]>([])
     useEffect(() => {
-        const naverApi = Naver()
-        naverApi
+        const kakao = Kakao()
+        kakao
             .search(bookName)
-            .then(response => setBooks(response.data.items))
+            .then(response => setBooks(response.data.documents))
             .catch(e => {
-                console.log(e)
+                console.error(e)
             })
     }, [bookName])
     const changeBookName = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -46,18 +39,17 @@ export default function App() {
     }
     return (
         <>
-            <Input value={bookName} onChange={changeBookName} placeholder="책 이름?" />
-            <Button>쌈@뽕한 버튼</Button>
+            <Input value={bookName} onChange={changeBookName} />
             <Grid>
                 {books.map((book: any, key: any) => (
                     <Wrapper key={key}>
                         <Title>{book.author}</Title>
                         <Title>{book.title}</Title>
-                        <Title>{book.description}</Title>
+                        <Title>{book.contents}</Title>
+                        <img src={book.thumbnail} alt="bookImage" />
                     </Wrapper>
                 ))}
             </Grid>
-            <Font>폰트 ABC</Font>
         </>
     )
 }
