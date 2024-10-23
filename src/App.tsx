@@ -2,10 +2,11 @@ import { useEffect, useState } from "react"
 import styled from "styled-components"
 
 import Kakao from "./api/KakaoAPI"
+import Background from "./components/Background"
 
 const Grid = styled.div`
     display: flex;
-    grid-template-columns: 2;
+    flex-direction: column;
 `
 const Wrapper = styled.div`
     border: 5px solid red;
@@ -38,18 +39,17 @@ export default function App() {
         setBookName(e.target.value)
     }
     return (
-        <>
-            <Input value={bookName} onChange={changeBookName} />
+        <Background>
+            <Input value={bookName} onChange={changeBookName} placeholder="placeholder" />
             <Grid>
                 {books.map((book: any, key: any) => (
                     <Wrapper key={key}>
                         <Title>{book.author}</Title>
                         <Title>{book.title}</Title>
-                        <Title>{book.contents}</Title>
                         <img src={book.thumbnail} alt="bookImage" />
                     </Wrapper>
                 ))}
             </Grid>
-        </>
+        </Background>
     )
 }
