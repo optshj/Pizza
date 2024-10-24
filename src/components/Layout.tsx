@@ -5,6 +5,7 @@ import theme from "../styles/Color"
 import Background from "./Background"
 import BookComponent from "./BookComponent"
 import NavigationBar from "./navBar/NavigationBar"
+import DaumPost from "../api/DaumPost"
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
@@ -13,6 +14,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 {children}
                 <BookComponent />
                 <NavigationBar />
+                <DaumPost />
             </Background>
         </ThemeProvider>
     )
