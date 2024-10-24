@@ -1,12 +1,12 @@
-import Layout from "./components/Layout"
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter } from "react-router-dom"
+import Layout from "./components/Layout/Layout"
+import Login from "./pages/Login"
+
 export default function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/Pizza">
             <Layout>
-                <Routes>
-                    <Route path="/" element={<div></div>} />
-                </Routes>
+                <Login />
             </Layout>
         </BrowserRouter>
     )
