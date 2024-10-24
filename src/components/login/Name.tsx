@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 
 const Wrapper = styled.div`
@@ -64,7 +65,9 @@ export default function Name() {
                 </FlexWrapper>
                 <Explain>{"가게 이름은 2~10자 이내로 한글, 영문, 숫자만 입력 가능합니다."}</Explain>
             </Wrapper>
-            <NextButton>{"다음"}</NextButton>
+            <NextButton>
+                <Link to="/name">{"다음"}</Link>
+            </NextButton>
         </>
     )
 }
