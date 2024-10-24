@@ -40,7 +40,7 @@ export default function Where() {
             <TextWrapper>
                 <Text>{"좋은 이름이네요!"}</Text>
                 <FlexWrapper>
-                    <TextRed>{"척추를피자 "}</TextRed>
+                    <TextRed>{"척추를피자"}</TextRed>
                     <Text>{"는"}</Text>
                 </FlexWrapper>
                 <Text>{"어디에 있나요?"}</Text>
