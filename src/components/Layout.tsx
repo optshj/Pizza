@@ -2,7 +2,7 @@ import { ThemeProvider } from "styled-components"
 
 import theme from "../styles/Color"
 
-import Background from "./Background"
+import Background from "./Layout/Background"
 import BookComponent from "./BookComponent"
 import NavigationBar from "./navBar/NavigationBar"
 
