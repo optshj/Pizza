@@ -16,7 +16,7 @@ export default function Login() {
     return (
         <Wrapper>
             <Routes>
-                <Route path="/login" element={<Main />} />
+                <Route path="/" element={<Main />} />
                 <Route path="/name" element={<Name />} />
             </Routes>
         </Wrapper>
