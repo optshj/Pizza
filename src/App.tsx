@@ -4,7 +4,7 @@ import Login from "./pages/Login"
 
 export default function App() {
     return (
-        <BrowserRouter basename="/pizza">
+        <BrowserRouter basename="/Pizza">
             <Layout>
                 <Login />
             </Layout>
