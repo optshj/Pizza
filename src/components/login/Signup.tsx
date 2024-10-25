@@ -11,6 +11,7 @@ const TextWrapper = styled.div`
 const FlexWrapper = styled.div`
     display: flex;
 `
+
 export default function Signup() {
     const { userName } = useUserName()
     return (
