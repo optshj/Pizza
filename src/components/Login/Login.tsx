@@ -1,20 +1,32 @@
 import styled from "styled-components"
 import { Link, useSearchParams } from "react-router-dom"
 
-import { ReactComponent as Charactersvg } from "../../assets/character/BodyRed.svg"
+import { ReactComponent as Charactersvg } from "../../assets/character/TongueRed.svg"
 import { ReactComponent as Logosvg } from "../../assets/logo/LogoTransverse.svg"
 
+import FadeIn from "./components/FadeIn"
+
+const IconWrapper = styled.div`
+    margin-top: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
 const Logo = styled(Logosvg)`
-    margin-top: 20%;
-    width: 70%;
+    width: 100%;
 `
 const Character = styled(Charactersvg)`
     margin-top: 40px;
-    width: 40%;
+    width: 80%;
 `
-const KakaoLogin = styled.button`
+const ButtonWrapper = styled.div`
     position: absolute;
     bottom: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+const KakaoLogin = styled.button`
     width: 331px;
     height: 64px;
     background-color: rgb(250, 225, 0);
@@ -25,8 +37,7 @@ const OtherLogin = styled.button`
     font-size: 12px;
     text-decoration: underline;
     color: rgb(88, 88, 88);
-    position: absolute;
-    bottom: 15%;
+    margin-top: 20px;
 `
 export default function Login() {
     const KAKAO_KEY = process.env.REACT_APP_KAKAO_KEY
@@ -43,12 +54,22 @@ export default function Login() {
     }
     return (
         <>
-            <Logo />
-            <Character />
-            <KakaoLogin onClick={onClick}>{"카카오로 시작하기"}</KakaoLogin>
-            <OtherLogin>
-                <Link to="/name">{"다른 계정으로 로그인하기"}</Link>
-            </OtherLogin>
+            <FadeIn delay="0.5s">
+                <IconWrapper>
+                    <Logo />
+                    <Character />
+                </IconWrapper>
+            </FadeIn>
+            <ButtonWrapper>
+                <FadeIn delay="0.5s">
+                    <KakaoLogin onClick={onClick}>{"카카오로 시작하기"}</KakaoLogin>
+                </FadeIn>
+                <FadeIn delay="0.5s">
+                    <OtherLogin>
+                        <Link to="/name">{"다른 계정으로 로그인하기"}</Link>
+                    </OtherLogin>
+                </FadeIn>
+            </ButtonWrapper>
         </>
     )
 }
