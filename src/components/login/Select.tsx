@@ -10,11 +10,17 @@ const TextWrapper = styled.div`
     margin-top: 100px;
     margin-bottom: 20px;
 `
+const Blcok = styled.div`
+    width: 20px;
+    height: 20px;
+`
 const SelectGrid = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    justify-content: center;
+    place-items: center;
+    max-height: 350px;
+    overflow-y: auto;
 `
 
 export default function Select() {
@@ -23,6 +29,7 @@ export default function Select() {
             <LoginWrapper>
                 <TextWrapper>
                     <Text text={"다 왔어요!"} />
+                    <Blcok />
                     <Text text={"마지막으로 사장님이"} />
                     <Text text={"좋아하는 피자 메뉴를"} />
                     <Text text={"골라볼까요?😍"} />
@@ -32,6 +39,9 @@ export default function Select() {
                         <Item text={"경제/경영"} />
                         <Item text={"소설"} />
                         <Item text={"시/에세이"} />
+                        <Item text={"인문"} />
+                        <Item text={"경제"} />
+                        <Item text={"과학"} />
                         <Item text={"인문"} />
                     </SelectGrid>
                 </FadeIn>
