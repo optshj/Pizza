@@ -30,11 +30,17 @@ const OtherLogin = styled.button`
 `
 
 export default function Login() {
+    const KAKAO_KEY = process.env.REACT_APP_KAKAO_KEY
+    const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI
+    const link = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`
+    const onClick = () => {
+        window.location.href = link
+    }
     return (
         <>
             <Logo />
             <Character />
-            <KakaoLogin>{"카카오로 시작하기"}</KakaoLogin>
+            <KakaoLogin onClick={onClick}>{"카카오로 시작하기"}</KakaoLogin>
             <OtherLogin>
                 <Link to="/name">{"다른 계정으로 로그인하기"}</Link>
             </OtherLogin>
