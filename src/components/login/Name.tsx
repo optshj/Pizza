@@ -1,14 +1,15 @@
-import { Link } from "react-router-dom"
+import { useState } from "react"
 import styled from "styled-components"
 
-const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-`
+import { useUserName } from "../../context/UserNameContext"
+
+import Text from "./components/Text"
+import NextButton from "./components/NextButton"
+import LoginWrapper from "./components/LoginWrapper"
+import FadeIn from "./components/FadeIn"
+
 const TextWrapper = styled.div`
-    margin-top: 10%;
+    margin-top: 100px;
     margin-bottom: 20px;
 `
 const FlexWrapper = styled.div`
@@ -23,51 +24,43 @@ const Input = styled.input`
     margin-right: 5px;
     font-size: 24px;
 `
-const Text = styled.div`
-    text-align: left;
-    font-size: 40px;
-    line-height: 1.3;
-    white-space: nowrap;
-    font-weight: bold;
-`
 const Explain = styled.div`
-    margin-top: 5px;
+    margin-top: 7px;
     font-size: 13px;
     color: #3c3c3c;
+    white-space: nowrap;
 `
-const TextRed = styled(Text)`
-    color: ${props => props.theme.color.red};
-`
-const NextButton = styled.button`
-    position: absolute;
-    bottom: 20%;
-    width: 331px;
-    height: 64px;
-    background-color: ${props => props.theme.color.red};
-    border-radius: 13px;
-    font-size: 22px;
-    color: #ffffff;
-`
+
 export default function Name() {
+    const [name, setName] = useState("")
+    const { setUserName } = useUserName()
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setName(e.target.value)
+    }
+    const onSubmit = () => {
+        setUserName(name + "피자")
+    }
     return (
         <>
-            <Wrapper>
+            <LoginWrapper>
                 <TextWrapper>
                     <FlexWrapper>
-                        <Text>{"당신의 "}</Text>
-                        <TextRed>{` 피자가게`}</TextRed>
+                        <Text text={"당신의\u00A0"} />
+                        <Text red={true} text={"피자가게"} />
                     </FlexWrapper>
-                    <Text>{"이름을 지어볼까요?"}</Text>
+                    <Text text={"이름을 지어볼까요?🍕"} />
                 </TextWrapper>
-                <FlexWrapper>
-                    <Input placeholder="Ex) 어깨, 주름..." />
-                    <TextRed>{"피자"}</TextRed>
-                </FlexWrapper>
-                <Explain>{"가게 이름은 2~10자 이내로 한글, 영문, 숫자만 입력 가능합니다."}</Explain>
-            </Wrapper>
-            <NextButton>
-                <Link to="/name">{"다음"}</Link>
-            </NextButton>
+                <FadeIn delay="1s">
+                    <FlexWrapper>
+                        <Input placeholder="Ex) 어깨, 주름..." onChange={onChange} />
+                        <Text red={true} text={"피자"} />
+                    </FlexWrapper>
+                </FadeIn>
+                <FadeIn delay="1.5s">
+                    <Explain>{"가게 이름은 2~10자 이내로 한글, 영문, 숫자만 입력 가능합니다."}</Explain>
+                </FadeIn>
+            </LoginWrapper>
+            <NextButton to="/where" onClick={onSubmit} />
         </>
     )
 }

@@ -1,51 +1,33 @@
 import styled from "styled-components"
 
-const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-`
+import { useUserName } from "../../context/UserNameContext"
+
+import Text from "./components/Text"
+import NextButton from "./components/NextButton"
+import LoginWrapper from "./components/LoginWrapper"
+
 const TextWrapper = styled.div`
-    margin-top: 10%;
+    margin-top: 100px;
     margin-bottom: 20px;
 `
 const FlexWrapper = styled.div`
     display: flex;
 `
-const Text = styled.div`
-    text-align: left;
-    font-size: 40px;
-    line-height: 1.3;
-    white-space: nowrap;
-    font-weight: bold;
-`
-const TextRed = styled(Text)`
-    color: ${props => props.theme.color.red};
-`
-const NextButton = styled.button`
-    position: absolute;
-    bottom: 20%;
-    width: 331px;
-    height: 64px;
-    background-color: ${props => props.theme.color.red};
-    border-radius: 13px;
-    font-size: 22px;
-    color: #ffffff;
-`
-
 export default function Where() {
+    const { userName } = useUserName()
     return (
-        <Wrapper>
-            <TextWrapper>
-                <Text>{"좋은 이름이네요!"}</Text>
-                <FlexWrapper>
-                    <TextRed>{"척추를피자"}</TextRed>
-                    <Text>{"는"}</Text>
-                </FlexWrapper>
-                <Text>{"어디에 있나요?"}</Text>
-            </TextWrapper>
-            <NextButton>{"다음"}</NextButton>
-        </Wrapper>
+        <>
+            <LoginWrapper>
+                <TextWrapper>
+                    <Text text={"좋은 이름이네요!"} />
+                    <FlexWrapper>
+                        <Text red={true} text={userName} />
+                        <Text text={"는"} />
+                    </FlexWrapper>
+                    <Text text={"어디에 있나요?"} />
+                </TextWrapper>
+            </LoginWrapper>
+            <NextButton to="/select" />
+        </>
     )
 }

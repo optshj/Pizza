@@ -34,9 +34,9 @@ export default function Login() {
         <>
             <Logo />
             <Character />
-            <KakaoLogin>카카오로 시작하기</KakaoLogin>
+            <KakaoLogin>{"카카오로 시작하기"}</KakaoLogin>
             <OtherLogin>
-                <Link to="/name">다른 계정으로 로그인하기</Link>
+                <Link to="/name">{"다른 계정으로 로그인하기"}</Link>
             </OtherLogin>
         </>
     )
