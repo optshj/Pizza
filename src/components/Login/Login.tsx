@@ -28,7 +28,6 @@ const OtherLogin = styled.button`
     position: absolute;
     bottom: 15%;
 `
-
 export default function Login() {
     const KAKAO_KEY = process.env.REACT_APP_KAKAO_KEY
     const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI
