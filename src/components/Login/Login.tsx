@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Link } from "react-router-dom"
+import { Link, useSearchParams } from "react-router-dom"
 
 import { ReactComponent as Charactersvg } from "../../assets/character/BodyRed.svg"
 import { ReactComponent as Logosvg } from "../../assets/logo/LogoSquare.svg"
@@ -32,6 +32,11 @@ export default function Login() {
     const KAKAO_KEY = process.env.REACT_APP_KAKAO_KEY
     const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI
     const link = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`
+
+    let [query] = useSearchParams()
+    if (query.get("code")) {
+        window.location.href = "/name"
+    }
     const onClick = () => {
         window.location.href = link
     }
