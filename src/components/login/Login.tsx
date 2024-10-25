@@ -36,6 +36,7 @@ export default function Login() {
     const onClick = () => {
         window.location.href = link
     }
+
     return (
         <>
             <Logo />
