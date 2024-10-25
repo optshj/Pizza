@@ -1,0 +1,66 @@
+import { useState } from "react"
+import styled from "styled-components"
+
+import { useUserName } from "../../context/UserNameContext"
+
+import Text from "./components/Text"
+import NextButton from "./components/NextButton"
+import LoginWrapper from "./components/LoginWrapper"
+import FadeIn from "./components/FadeIn"
+
+const TextWrapper = styled.div`
+    margin-top: 100px;
+    margin-bottom: 20px;
+`
+const FlexWrapper = styled.div`
+    display: flex;
+`
+const Input = styled.input`
+    width: 180px;
+    padding: 0 10px;
+    height: 48px;
+    background-color: #d8d8d8;
+    border-radius: 10px;
+    margin-right: 5px;
+    font-size: 24px;
+`
+const Explain = styled.div`
+    margin-top: 7px;
+    font-size: 13px;
+    color: #3c3c3c;
+    white-space: nowrap;
+`
+
+export default function Name() {
+    const [name, setName] = useState("")
+    const { setUserName } = useUserName()
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setName(e.target.value)
+    }
+    const onSubmit = () => {
+        setUserName(name + "피자")
+    }
+    return (
+        <>
+            <LoginWrapper>
+                <TextWrapper>
+                    <FlexWrapper>
+                        <Text text={"당신의\u00A0"} />
+                        <Text red={true} text={"피자가게"} />
+                    </FlexWrapper>
+                    <Text text={"이름을 지어볼까요?🍕"} />
+                </TextWrapper>
+                <FadeIn delay="1s">
+                    <FlexWrapper>
+                        <Input placeholder="Ex) 어깨, 주름..." onChange={onChange} />
+                        <Text red={true} text={"피자"} />
+                    </FlexWrapper>
+                </FadeIn>
+                <FadeIn delay="1.5s">
+                    <Explain>{"가게 이름은 2~10자 이내로 한글, 영문, 숫자만 입력 가능합니다."}</Explain>
+                </FadeIn>
+            </LoginWrapper>
+            <NextButton to="/where" onClick={onSubmit} />
+        </>
+    )
+}
