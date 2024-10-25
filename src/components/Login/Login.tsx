@@ -2,11 +2,11 @@ import styled from "styled-components"
 import { Link, useSearchParams } from "react-router-dom"
 
 import { ReactComponent as Charactersvg } from "../../assets/character/BodyRed.svg"
-import { ReactComponent as Logosvg } from "../../assets/logo/LogoSquare.svg"
+import { ReactComponent as Logosvg } from "../../assets/logo/LogoTransverse.svg"
 
 const Logo = styled(Logosvg)`
     margin-top: 20%;
-    width: 40%;
+    width: 70%;
 `
 const Character = styled(Charactersvg)`
     margin-top: 40px;
@@ -34,13 +34,13 @@ export default function Login() {
     const link = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`
 
     let [query] = useSearchParams()
+
     if (query.get("code")) {
-        window.location.href = "/name"
+        window.location.href = "./name"
     }
     const onClick = () => {
         window.location.href = link
     }
-
     return (
         <>
             <Logo />

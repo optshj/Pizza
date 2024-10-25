@@ -1,5 +1,3 @@
-// 밑에서 위로 올라오는 페이드인 애니메이션 컴포넌트
-// 사용 예시: <FadeIn delay="0.5s">내용</FadeIn>
 import styled, { keyframes } from "styled-components"
 
 const fadeInUp = keyframes`
