@@ -3,8 +3,9 @@
     * 배포된 사이트 접속하기
     * 로컬에서 실행하기
 2. Branch에 대해
-3. Commit Convention
-4. Prettier(코드 정리기능) 사용하기
+3. 아이폰 14프로 규격
+4. Commit Convention
+5. Prettier(코드 정리기능) 사용하기
 
 ## 사이트 실행하기
 ### 배포된 사이트 접속하기
@@ -32,6 +33,9 @@ npm start
 
 `main` 에 적용된 내용은 자동으로 `gh-pages`  를 통해 배포됩니다.
 
+## 아이폰 14프로 규격
+ 393x852pt
+ 
 ## Commit Convention
 커밋 메시지를 작성하실 때 자세히 작성해준시다면 효율적인 작업에 도움이 됩니다.
 

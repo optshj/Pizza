@@ -1,5 +1,5 @@
 import BookComponent from "../components/BookComponent"
-import NavigationBar from "../components/navBar/NavigationBar"
+import NavigationBar from "../components/Layout/navBar/NavigationBar"
 import DaumPost from "../api/DaumPost"
 
 export default function Main() {
