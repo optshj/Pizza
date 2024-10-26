@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom"
 import styled from "styled-components"
 
-import Main from "../components/login/Login"
-import Name from "../components/login/Name"
-import Where from "../components/login/Where"
-import Select from "../components/login/Select"
-import Signup from "../components/login/Signup"
+import Main from "../components/Login/Login"
+import Name from "../components/Login/Name"
+import Where from "../components/Login/Where"
+import Select from "../components/Login/Select"
+import Signup from "../components/Login/Signup"
 
 const Wrapper = styled.div`
     width: 100%;
@@ -14,7 +14,6 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
 `
-
 export default function Login() {
     return (
         <Wrapper>
