@@ -6,6 +6,12 @@ import NextButton from "./components/NextButton"
 import Item from "./components/Item"
 import FadeIn from "./components/FadeIn"
 
+import book1 from "../../assets/book/book1.jpg"
+import book2 from "../../assets/book/book2.jpg"
+import book3 from "../../assets/book/book3.jpg"
+import book4 from "../../assets/book/book4.jpg"
+import book5 from "../../assets/book/book5.jpg"
+
 const TextWrapper = styled.div`
     margin-top: 100px;
     margin-bottom: 20px;
@@ -36,13 +42,11 @@ export default function Select() {
                 </TextWrapper>
                 <FadeIn delay="1s">
                     <SelectGrid>
-                        <Item text={"경제/경영"} />
-                        <Item text={"소설"} />
-                        <Item text={"시/에세이"} />
-                        <Item text={"인문"} />
-                        <Item text={"경제"} />
-                        <Item text={"과학"} />
-                        <Item text={"인문"} />
+                        <Item text={"경제/경영"} image={book1} />
+                        <Item text={"소설"} image={book2} />
+                        <Item text={"시/에세이"} image={book3} />
+                        <Item text={"인문"} image={book4} />
+                        <Item text={"경제"} image={book5} />
                     </SelectGrid>
                 </FadeIn>
             </LoginWrapper>
