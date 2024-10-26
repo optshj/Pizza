@@ -14,6 +14,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
 `
+
 export default function Login() {
     return (
         <Wrapper>
