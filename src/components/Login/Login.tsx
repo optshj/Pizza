@@ -56,8 +56,6 @@ export default function Login() {
 
     const onClick = () => {
         window.location.href = link
-    }
-
     return (
         <>
             <FadeIn delay="0.5s">
