@@ -1,5 +1,6 @@
+import React, { useEffect } from "react"
 import styled from "styled-components"
-import { Link, useSearchParams } from "react-router-dom"
+import { Link, useSearchParams, useNavigate } from "react-router-dom"
 
 import { ReactComponent as Charactersvg } from "../../assets/character/TongueRed.svg"
 import { ReactComponent as Logosvg } from "../../assets/logo/LogoTransverse.svg"
@@ -45,10 +46,14 @@ export default function Login() {
     const link = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`
 
     let [query] = useSearchParams()
+    const navigate = useNavigate()
 
-    if (query.get("code")) {
-        window.location.href = "./name"
-    }
+    useEffect(() => {
+        if (query.get("code")) {
+            navigate("./name")
+        }
+    }, [query, navigate]) // query와 navigate가 변경될 때만 실행
+
     const onClick = () => {
         window.location.href = link
     }
