@@ -6,6 +6,7 @@ import Name from "../components/Login/Name"
 import Where from "../components/Login/Where"
 import Select from "../components/Login/Select"
 import Signup from "../components/Login/Signup"
+import Home from "../components/Main/Main"
 
 const Wrapper = styled.div`
     width: 100%;
@@ -23,6 +24,7 @@ export default function Login() {
                 <Route path="/where" element={<Where />} />
                 <Route path="/select" element={<Select />} />
                 <Route path="/signup" element={<Signup />} />
+                <Route path="/main" element={<Home />} />
             </Routes>
         </Wrapper>
     )

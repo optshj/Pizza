@@ -52,11 +52,10 @@ export default function Login() {
         if (query.get("code")) {
             navigate("./name")
         }
-    }, [query, navigate]) // query와 navigate가 변경될 때만 실행
+    }, [query, navigate])
 
     const onClick = () => {
         window.location.href = link
-    }
     return (
         <>
             <FadeIn delay="0.5s">
