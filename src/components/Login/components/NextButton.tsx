@@ -2,12 +2,10 @@ import { Link } from "react-router-dom"
 import styled from "styled-components"
 import FadeIn from "./FadeIn"
 
-const Wrapper = styled.div<{ $isKeyboardVisible?: boolean }>`
+const Wrapper = styled.div`
+    bottom: 5%;
     position: absolute;
-    bottom: ${props => (props.$isKeyboardVisible ? "none" : "5%")};
-    top: ${props => (props.$isKeyboardVisible ? "35%" : "none")};
 `
-
 const Text = styled(Link)`
     display: flex;
     align-items: center;
@@ -26,7 +24,7 @@ interface NextButtonProps {
 }
 export default function NextButton({ to, onClick, isKeyboardVisible }: NextButtonProps) {
     return (
-        <Wrapper $isKeyboardVisible={isKeyboardVisible}>
+        <Wrapper>
             <FadeIn delay="1.5s">
                 <Text to={to} onClick={onClick}>
                     {"다음"}

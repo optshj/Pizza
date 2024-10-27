@@ -34,7 +34,6 @@ const Explain = styled.div`
 export default function Name() {
     const [name, setName] = useState("")
     const { setUserName } = useUserName()
-    const [isKeyboardVisible, setIsKeyboardVisible] = useState(false)
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setName(e.target.value)
@@ -42,14 +41,6 @@ export default function Name() {
 
     const onSubmit = () => {
         setUserName(name + "피자")
-    }
-
-    const handleFocus = () => {
-        setIsKeyboardVisible(true)
-    }
-
-    const handleBlur = () => {
-        setIsKeyboardVisible(false)
     }
 
     return (
@@ -64,12 +55,7 @@ export default function Name() {
                 </TextWrapper>
                 <FadeIn delay="1s">
                     <FlexWrapper>
-                        <Input
-                            placeholder="Ex) 어깨, 주름..."
-                            onChange={onChange}
-                            onFocus={handleFocus}
-                            onBlur={handleBlur}
-                        />
+                        <Input placeholder="Ex) 어깨, 주름..." onChange={onChange} />
                         <Text red={true} text={"피자"} />
                     </FlexWrapper>
                 </FadeIn>
@@ -77,7 +63,7 @@ export default function Name() {
                     <Explain>{"가게 이름은 2~10자 이내로 한글, 영문, 숫자만 입력 가능합니다."}</Explain>
                 </FadeIn>
             </LoginWrapper>
-            <NextButton to="/where" onClick={onSubmit} isKeyboardVisible={isKeyboardVisible} />
+            <NextButton to="/where" onClick={onSubmit} />
         </>
     )
 }
