@@ -3,9 +3,11 @@ import styled from "styled-components"
 
 import { GoCheck } from "react-icons/go"
 
-const Wrapper = styled.div<{ image: string }>`
-    width: 170px;
-    height: 170px;
+const Wrapper = styled.div<{ $image: string }>`
+    width: 40vw;
+    height: 40vw;
+    max-width: 170px;
+    max-height: 170px;
     border-radius: 33px;
     background-color: #4d4d4d;
     background-size: cover;
@@ -15,7 +17,9 @@ const Wrapper = styled.div<{ image: string }>`
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    background-image: ${({ image }) => `url(${image})`};
+    background-image: ${({ $image }) => `url(${$image})`};
+    max-width: 100%; /* 최대 너비를 100%로 설정 */
+    box-sizing: border-box; /* 패딩과 보더를 포함한 너비 계산 */
 `
 const Overlay = styled.div<{ $isSelect: boolean }>`
     position: absolute;
@@ -27,7 +31,6 @@ const Overlay = styled.div<{ $isSelect: boolean }>`
     border-radius: 33px;
     transition: background-color 0.5s ease;
 `
-
 const Text = styled.div<{ $isSelect: boolean }>`
     color: #ffffff;
     font-size: 24px;
@@ -38,7 +41,6 @@ const Text = styled.div<{ $isSelect: boolean }>`
         opacity 0.5s ease,
         transform 0.5s ease;
 `
-
 const Icon = styled(GoCheck)<{ $isSelect: boolean }>`
     color: #ffffff;
     font-size: 40px;
@@ -61,7 +63,7 @@ export default function Item({ text, image }: ItemProps) {
     }
 
     return (
-        <Wrapper onClick={onClick} image={image}>
+        <Wrapper onClick={onClick} $image={image}>
             <Overlay $isSelect={isSelect} />
             <Text $isSelect={isSelect}>{text}</Text>
             <Icon $isSelect={isSelect} />
