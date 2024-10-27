@@ -8,7 +8,7 @@ import { ReactComponent as Logosvg } from "../../assets/logo/LogoTransverse.svg"
 import FadeIn from "./components/FadeIn"
 
 const IconWrapper = styled.div`
-    margin-top: 50%;
+    margin-top: 15vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,7 +18,7 @@ const Logo = styled(Logosvg)`
 `
 const Character = styled(Charactersvg)`
     margin-top: 40px;
-    width: 80%;
+    width: 70%;
 `
 const ButtonWrapper = styled.div`
     position: absolute;

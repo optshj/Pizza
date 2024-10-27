@@ -60,7 +60,7 @@ export default function Item({ text, image }: ItemProps) {
     }
 
     return (
-        <Wrapper onClick={onClick} $image={image}>
+        <Wrapper onClick={onClick} $image={require(`../../../assets/book/${image}.jpg`)}>
             <Overlay $isSelect={isSelect} />
             <Text $isSelect={isSelect}>{text}</Text>
             <Icon $isSelect={isSelect} />

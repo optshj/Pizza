@@ -6,15 +6,6 @@ import NextButton from "./components/NextButton"
 import Item from "./components/Item"
 import FadeIn from "./components/FadeIn"
 
-import book1 from "../../assets/book/book1.jpg"
-import book2 from "../../assets/book/book2.jpg"
-import book3 from "../../assets/book/book3.jpg"
-import book4 from "../../assets/book/book4.jpg"
-import book5 from "../../assets/book/book5.jpg"
-import book6 from "../../assets/book/book6.jpg"
-import book7 from "../../assets/book/book7.jpg"
-import book8 from "../../assets/book/book8.jpg"
-
 const TextWrapper = styled.div`
     margin-top: 100px;
     margin-bottom: 20px;
@@ -23,7 +14,7 @@ const Blcok = styled.div`
     width: 20px;
     height: 20px;
 `
-const SelectGrid = styled.div`
+const GridWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
@@ -33,14 +24,14 @@ const SelectGrid = styled.div`
 `
 
 const items = [
-    { text: "경제/경영", image: book1 },
-    { text: "소설", image: book2 },
-    { text: "시/에세이", image: book3 },
-    { text: "인문", image: book4 },
-    { text: "경제", image: book5 },
-    { text: "청소년", image: book6 },
-    { text: "자기계발", image: book7 },
-    { text: "여행", image: book8 }
+    { text: "경제/경영", image: "book1" },
+    { text: "소설", image: "book2" },
+    { text: "시/에세이", image: "book3" },
+    { text: "인문", image: "book4" },
+    { text: "경제", image: "book5" },
+    { text: "청소년", image: "book6" },
+    { text: "자기계발", image: "book7" },
+    { text: "여행", image: "book8" }
 ]
 
 export default function Select() {
@@ -55,11 +46,11 @@ export default function Select() {
                     <Text text={"골라볼까요?😍"} />
                 </TextWrapper>
                 <FadeIn delay="1s">
-                    <SelectGrid>
+                    <GridWrapper>
                         {items.map(item => (
                             <Item key={item.text} text={item.text} image={item.image} />
                         ))}
-                    </SelectGrid>
+                    </GridWrapper>
                 </FadeIn>
             </LoginWrapper>
             <NextButton to="/signup" />
