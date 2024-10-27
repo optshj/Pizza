@@ -9,17 +9,14 @@ const Wrapper = styled.div<{ $image: string }>`
     max-width: 170px;
     max-height: 170px;
     border-radius: 33px;
-    background-color: #4d4d4d;
-    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
     position: relative;
-    overflow: hidden;
+    background-size: cover;
     background-image: ${({ $image }) => `url(${$image})`};
-    max-width: 100%; /* 최대 너비를 100%로 설정 */
-    box-sizing: border-box; /* 패딩과 보더를 포함한 너비 계산 */
+    box-sizing: border-box;
+    cursor: pointer;
 `
 const Overlay = styled.div<{ $isSelect: boolean }>`
     position: absolute;

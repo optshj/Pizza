@@ -3,7 +3,7 @@ import styled from "styled-components"
 import FadeIn from "./FadeIn"
 
 const Wrapper = styled.div`
-    bottom: 10%;
+    bottom: 5%;
     position: absolute;
 `
 const Text = styled(Link)`

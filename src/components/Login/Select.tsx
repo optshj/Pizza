@@ -11,6 +11,9 @@ import book2 from "../../assets/book/book2.jpg"
 import book3 from "../../assets/book/book3.jpg"
 import book4 from "../../assets/book/book4.jpg"
 import book5 from "../../assets/book/book5.jpg"
+import book6 from "../../assets/book/book6.jpg"
+import book7 from "../../assets/book/book7.jpg"
+import book8 from "../../assets/book/book8.jpg"
 
 const TextWrapper = styled.div`
     margin-top: 100px;
@@ -29,6 +32,17 @@ const SelectGrid = styled.div`
     overflow-y: auto;
 `
 
+const items = [
+    { text: "경제/경영", image: book1 },
+    { text: "소설", image: book2 },
+    { text: "시/에세이", image: book3 },
+    { text: "인문", image: book4 },
+    { text: "경제", image: book5 },
+    { text: "청소년", image: book6 },
+    { text: "자기계발", image: book7 },
+    { text: "여행", image: book8 }
+]
+
 export default function Select() {
     return (
         <>
@@ -42,11 +56,9 @@ export default function Select() {
                 </TextWrapper>
                 <FadeIn delay="1s">
                     <SelectGrid>
-                        <Item text={"경제/경영"} image={book1} />
-                        <Item text={"소설"} image={book2} />
-                        <Item text={"시/에세이"} image={book3} />
-                        <Item text={"인문"} image={book4} />
-                        <Item text={"경제"} image={book5} />
+                        {items.map(item => (
+                            <Item key={item.text} text={item.text} image={item.image} />
+                        ))}
                     </SelectGrid>
                 </FadeIn>
             </LoginWrapper>
