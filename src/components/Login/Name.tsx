@@ -30,16 +30,31 @@ const Explain = styled.div`
     color: #3c3c3c;
     white-space: nowrap;
 `
+const ButtonWrapper = styled.div<{ isKeyboardVisible: boolean }>`
+    margin-top: ${({ isKeyboardVisible }) => (isKeyboardVisible ? "300px" : "0")};
+`
 
 export default function Name() {
     const [name, setName] = useState("")
     const { setUserName } = useUserName()
+    const [isKeyboardVisible, setIsKeyboardVisible] = useState(false)
+
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setName(e.target.value)
     }
+
     const onSubmit = () => {
         setUserName(name + "피자")
     }
+
+    const handleFocus = () => {
+        setIsKeyboardVisible(true)
+    }
+
+    const handleBlur = () => {
+        setIsKeyboardVisible(false)
+    }
+
     return (
         <>
             <LoginWrapper>
@@ -52,7 +67,12 @@ export default function Name() {
                 </TextWrapper>
                 <FadeIn delay="1s">
                     <FlexWrapper>
-                        <Input placeholder="Ex) 어깨, 주름..." onChange={onChange} />
+                        <Input
+                            placeholder="Ex) 어깨, 주름..."
+                            onChange={onChange}
+                            onFocus={handleFocus}
+                            onBlur={handleBlur}
+                        />
                         <Text red={true} text={"피자"} />
                     </FlexWrapper>
                 </FadeIn>
@@ -60,7 +80,9 @@ export default function Name() {
                     <Explain>{"가게 이름은 2~10자 이내로 한글, 영문, 숫자만 입력 가능합니다."}</Explain>
                 </FadeIn>
             </LoginWrapper>
-            <NextButton to="/where" onClick={onSubmit} />
+            <ButtonWrapper isKeyboardVisible={isKeyboardVisible}>
+                <NextButton to="/where" onClick={onSubmit} />
+            </ButtonWrapper>
         </>
     )
 }

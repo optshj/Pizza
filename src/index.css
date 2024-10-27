@@ -24,6 +24,7 @@ input{
 }
 
 button{
+  appearance: none; 
   background: none;
   border: none;
   cursor: pointer;
