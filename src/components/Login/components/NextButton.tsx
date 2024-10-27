@@ -7,7 +7,7 @@ interface WrapperProps {
     isKeyboardVisible?: boolean
 }
 const Wrapper = styled.div<WrapperProps>`
-    bottom: ${props => (props.isKeyboardVisible ? props.keyboardHeight + "px" : "5%")};
+    bottom: ${props => (props.isKeyboardVisible ? "40%" : "5%")};
     position: absolute;
 `
 const Text = styled(Link)`
