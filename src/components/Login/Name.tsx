@@ -30,9 +30,6 @@ const Explain = styled.div`
     color: #3c3c3c;
     white-space: nowrap;
 `
-const ButtonWrapper = styled.div<{ isKeyboardVisible: boolean }>`
-    margin-top: ${({ isKeyboardVisible }) => (isKeyboardVisible ? "300px" : "0")};
-`
 
 export default function Name() {
     const [name, setName] = useState("")
@@ -80,9 +77,7 @@ export default function Name() {
                     <Explain>{"가게 이름은 2~10자 이내로 한글, 영문, 숫자만 입력 가능합니다."}</Explain>
                 </FadeIn>
             </LoginWrapper>
-            <ButtonWrapper isKeyboardVisible={isKeyboardVisible}>
-                <NextButton to="/where" onClick={onSubmit} />
-            </ButtonWrapper>
+            <NextButton to="/where" onClick={onSubmit} isKeyboardVisible={isKeyboardVisible} />
         </>
     )
 }
