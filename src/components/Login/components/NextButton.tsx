@@ -7,7 +7,7 @@ interface WrapperProps {
     isKeyboardVisible?: boolean
 }
 const Wrapper = styled.div<WrapperProps>`
-    bottom: ${props => (props.isKeyboardVisible ? "40%" : "5%")};
+    bottom: ${props => Math.max(props.keyboardHeight ?? 0, window.innerHeight * 0.05) + "px"};
     position: absolute;
 `
 const Text = styled(Link)`
@@ -29,7 +29,7 @@ interface NextButtonProps {
 }
 export default function NextButton({ to, onClick, keyboardHeight, isKeyboardVisible }: NextButtonProps) {
     return (
-        <Wrapper>
+        <Wrapper keyboardHeight={keyboardHeight} isKeyboardVisible={isKeyboardVisible}>
             <FadeIn delay="1.5s">
                 <Text to={to} onClick={onClick}>
                     {"다음"}
