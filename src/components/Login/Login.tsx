@@ -33,6 +33,7 @@ const KakaoLogin = styled.button`
     background-color: rgb(250, 225, 0);
     border-radius: 13px;
     font-size: 22px;
+    color: #3c1e1e;
 `
 const OtherLogin = styled.button`
     font-size: 12px;
