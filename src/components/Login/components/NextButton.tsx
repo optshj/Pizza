@@ -3,9 +3,11 @@ import styled from "styled-components"
 import FadeIn from "./FadeIn"
 
 const Wrapper = styled.div<{ $isKeyboardVisible?: boolean }>`
-    bottom: ${({ $isKeyboardVisible }) => ($isKeyboardVisible ? "40%" : "5%")};
     position: absolute;
+    bottom: ${props => (props.$isKeyboardVisible ? "none" : "5%")};
+    top: ${props => (props.$isKeyboardVisible ? "35%" : "none")};
 `
+
 const Text = styled(Link)`
     display: flex;
     align-items: center;
