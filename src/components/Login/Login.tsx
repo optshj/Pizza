@@ -8,7 +8,7 @@ import { ReactComponent as Logosvg } from "../../assets/logo/LogoTransverse.svg"
 import FadeIn from "./components/FadeIn"
 
 const IconWrapper = styled.div`
-    margin-top: 50%;
+    margin-top: 15vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,7 +18,7 @@ const Logo = styled(Logosvg)`
 `
 const Character = styled(Charactersvg)`
     margin-top: 40px;
-    width: 80%;
+    width: 70%;
 `
 const ButtonWrapper = styled.div`
     position: absolute;
@@ -33,6 +33,7 @@ const KakaoLogin = styled.button`
     background-color: rgb(250, 225, 0);
     border-radius: 13px;
     font-size: 22px;
+    color: #3c1e1e;
 `
 const OtherLogin = styled.button`
     font-size: 12px;

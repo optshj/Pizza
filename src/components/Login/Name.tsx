@@ -34,12 +34,26 @@ const Explain = styled.div`
 export default function Name() {
     const [name, setName] = useState("")
     const { setUserName } = useUserName()
+    const [keyboardHeight, setKeyboardHeight] = useState(0)
+
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener("resize", () => {
+            let visualViewportHeight = window.visualViewport?.height || 0
+            let windowHeight = window.innerHeight
+            let keyboardHeight = windowHeight - visualViewportHeight
+
+            setKeyboardHeight(keyboardHeight)
+        })
+    }
+
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setName(e.target.value)
     }
+
     const onSubmit = () => {
         setUserName(name + "피자")
     }
+
     return (
         <>
             <LoginWrapper>
@@ -60,7 +74,7 @@ export default function Name() {
                     <Explain>{"가게 이름은 2~10자 이내로 한글, 영문, 숫자만 입력 가능합니다."}</Explain>
                 </FadeIn>
             </LoginWrapper>
-            <NextButton to="/where" onClick={onSubmit} />
+            <NextButton to="/where" onClick={onSubmit} keyboardHeight={keyboardHeight} />
         </>
     )
 }
