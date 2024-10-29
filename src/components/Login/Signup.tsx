@@ -37,10 +37,10 @@ export default function Signup() {
         }
 
         confetti({
-            angle: randomInRange(55, 125),
+            angle: 90,
             spread: randomInRange(50, 70),
             particleCount: randomInRange(50, 150),
-            origin: { x: 0.5, y: 0.5 }
+            origin: { x: 0.6, y: 0.6 }
         })
 
         const timer = setTimeout(() => {
