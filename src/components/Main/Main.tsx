@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 import Item from "./components/Item"
 import BottomNav from "./components/BottomNav"
+
 import { ReactComponent as Logosvg } from "../../assets/logo/LogoTransverse.svg"
 import { ReactComponent as Alarmsvg } from "../../assets/icon/bell-svgrepo-com-2.svg"
 import { ReactComponent as Cartsvg } from "../../assets/icon/shopping-cart-svgrepo-com.svg"
