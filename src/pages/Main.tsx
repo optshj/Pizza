@@ -19,7 +19,7 @@ export default function Main() {
             <Routes>
                 <Route path="/home" element={<Home />} />
                 <Route path="/feed" element={<Feed />} />
-                <Route path="*" element={<Alarm />} />
+                <Route path="/alarm" element={<Alarm />} />
             </Routes>
         </Wrapper>
     )
