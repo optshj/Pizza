@@ -56,6 +56,7 @@ function Item({ icon, label, link }: ItemProps) {
         </ItemWrapper>
     )
 }
+
 export default function NavigationBar() {
     return (
         <Navigation>
