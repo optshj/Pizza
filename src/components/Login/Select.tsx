@@ -18,8 +18,9 @@ const GridWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    height: 30vh;
+    height: 35vh;
     max-height: 350px;
+    min-height: 150px;
     place-items: center;
     overflow-y: auto;
 `

@@ -11,7 +11,9 @@ const Address = styled.div`
     grid-template-columns: 1fr auto 1fr auto 1fr;
     align-items: center;
     background-color: #fff;
-    height: 350px;
+    height: 35vh;
+    min-height: 150px;
+    max-height: 350px;
     padding: 20px 0;
 `
 
@@ -37,7 +39,7 @@ const Line = styled.div`
 
 const Wrapper = styled.li<{ $isSelected: boolean; $hasSelection: boolean }>`
     font-size: 23px;
-    margin: 15px;
+    padding: 15px;
     text-align: center;
     box-sizing: border-box;
     color: ${({ $isSelected, $hasSelection }) => ($isSelected ? "#cb3d3f" : $hasSelection ? "#717171" : "#262626")};
@@ -72,7 +74,11 @@ export default function AddressWrapper() {
                             text={val}
                             isSelected={val === si}
                             hasSelection={si !== ""}
-                            onClick={() => setSi(val)}
+                            onClick={() => {
+                                setSi(val)
+                                setGu("")
+                                setDong("")
+                            }}
                         />
                     ))}
                 </ItemWrapper>
@@ -84,12 +90,15 @@ export default function AddressWrapper() {
                             text={val}
                             isSelected={val === gu}
                             hasSelection={gu !== ""}
-                            onClick={() => setGu(val)}
+                            onClick={() => {
+                                setGu(val)
+                                setDong("")
+                            }}
                         />
                     ))}
                 </ItemWrapper>
                 <Line />
-                <ItemWrapper $isSelected={si !== ""}>
+                <ItemWrapper $isSelected={gu !== ""}>
                     {si &&
                         gu &&
                         (addressData[si] as { [key: string]: string[] })[gu].map((val, index) => (

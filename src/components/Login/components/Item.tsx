@@ -33,6 +33,7 @@ const Text = styled.div<{ $isSelect: boolean }>`
     font-weight: 600;
     position: absolute;
     opacity: ${({ $isSelect }) => ($isSelect ? 0 : 1)};
+    white-space: nowrap;
     transition:
         opacity 0.5s ease,
         transform 0.5s ease;

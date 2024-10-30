@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 import { useUserName } from "../../context/UserNameContext"
+import { useAddress } from "../../context/AddressContext"
 
 import Text from "./components/Text"
 import NextButton from "./components/NextButton"
@@ -16,6 +17,8 @@ const FlexWrapper = styled.div`
 
 export default function Where() {
     const { userName } = useUserName()
+    const { dong } = useAddress()
+    const isActive = dong !== ""
     return (
         <>
             <LoginWrapper>
@@ -29,7 +32,7 @@ export default function Where() {
                 </TextWrapper>
                 <AddressWrapper />
             </LoginWrapper>
-            <NextButton to="/select" />
+            <NextButton to="/select" isActive={isActive} />
         </>
     )
 }
