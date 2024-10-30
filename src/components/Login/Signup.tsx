@@ -19,12 +19,9 @@ const fadeOut = keyframes`
     }
 `
 const TextWrapper = styled.div`
-    margin-top: 300px;
+    margin: 300px 20px 20px;
     animation: ${fadeOut} 2s ease-in-out forwards;
     animation-delay: 3s;
-`
-const FlexWrapper = styled.div`
-    display: flex;
 `
 
 export default function Signup() {
@@ -54,10 +51,8 @@ export default function Signup() {
         <LoginWrapper>
             <TextWrapper>
                 <Text text={"개업 축하드립니다🥳"} />
-                <FlexWrapper>
-                    <Text red={true} text={userName} />
-                    <Text text={"\u00A0가게 사장님!"} />
-                </FlexWrapper>
+                <Text red={true} text={userName} />
+                <Text text={"가게 사장님!"} />
             </TextWrapper>
         </LoginWrapper>
     )

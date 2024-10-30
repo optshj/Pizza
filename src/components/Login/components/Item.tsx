@@ -1,4 +1,3 @@
-import { useState } from "react"
 import styled from "styled-components"
 
 import { GoCheck } from "react-icons/go"
@@ -51,14 +50,11 @@ const Icon = styled(GoCheck)<{ $isSelect: boolean }>`
 interface ItemProps {
     text: string
     image: string
+    isSelect: boolean
+    onClick: () => void
 }
 
-export default function Item({ text, image }: ItemProps) {
-    const [isSelect, setIsSelect] = useState(false)
-    const onClick = () => {
-        setIsSelect(!isSelect)
-    }
-
+export default function Item({ text, image, isSelect, onClick }: ItemProps) {
     return (
         <Wrapper onClick={onClick} $image={require(`../../../assets/book/${image}.jpg`)}>
             <Overlay $isSelect={isSelect} />
