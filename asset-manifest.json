@@ -1,29 +1,34 @@
 {
   "files": {
     "main.css": "/Pizza/static/css/main.3bf03af3.css",
-    "main.js": "/Pizza/static/js/main.6f2ba304.js",
+    "main.js": "/Pizza/static/js/main.f75934b0.js",
     "static/js/453.f33d9648.chunk.js": "/Pizza/static/js/453.f33d9648.chunk.js",
     "static/media/book8.jpg": "/Pizza/static/media/book8.0fbf530d35e94827d286.jpg",
     "static/media/book5.jpg": "/Pizza/static/media/book5.2b9dde2f437e7c6cbabd.jpg",
     "static/media/book2.jpg": "/Pizza/static/media/book2.88d6689fc8423f1d143c.jpg",
     "static/media/TongueRed.svg": "/Pizza/static/media/TongueRed.0018afa59a632d3eba5204663810657b.svg",
     "static/media/book4.jpg": "/Pizza/static/media/book4.07f0887edf01ddd4a78f.jpg",
-    "static/media/FaceYellow.svg": "/Pizza/static/media/FaceYellow.712034af4b9f21d685c2832b45dc2fa8.svg",
+    "static/media/FaceRed.svg": "/Pizza/static/media/FaceRed.c0b13d87f5f69f938e8fffe185cbc2af.svg",
     "static/media/book6.jpg": "/Pizza/static/media/book6.a8ac954a3715396a1010.jpg",
     "static/media/book1.jpg": "/Pizza/static/media/book1.c1a8046b3dbabe824515.jpg",
     "static/media/book7.jpg": "/Pizza/static/media/book7.7b02cf24c2396befcc8a.jpg",
     "static/media/book3.jpg": "/Pizza/static/media/book3.30c2c16739ee8ec77eea.jpg",
     "static/media/LogoTransverse.svg": "/Pizza/static/media/LogoTransverse.9b6df9607d297e987a7ff383b32dce66.svg",
+    "static/media/feed-svgrepo-com.svg": "/Pizza/static/media/feed-svgrepo-com.30c9aa88153d6aa37191c8f70ee65e0c.svg",
     "static/media/shopping-cart-svgrepo-com.svg": "/Pizza/static/media/shopping-cart-svgrepo-com.03615a97cf8e77b14e4d93b8cbd7b4ff.svg",
     "static/media/bell-svgrepo-com-2.svg": "/Pizza/static/media/bell-svgrepo-com-2.80963caa3da359d47a3000715a9f4c05.svg",
+    "static/media/store-svgrepo-com.svg": "/Pizza/static/media/store-svgrepo-com.4224fd6e3c27f53904b94b38d117eab7.svg",
+    "static/media/user-svgrepo-com.svg": "/Pizza/static/media/user-svgrepo-com.84f01ccaff546041d5f8594d79e64955.svg",
     "index.html": "/Pizza/index.html",
+    "static/media/home-2-svgrepo-com.svg": "/Pizza/static/media/home-2-svgrepo-com.3f9430a5c49253e23a93e606f8049c9f.svg",
+    "static/media/chat-empty-svgrepo-com.svg": "/Pizza/static/media/chat-empty-svgrepo-com.7e922f70e200222d94f10a4a89821fd7.svg",
     "static/media/search-svgrepo-com.svg": "/Pizza/static/media/search-svgrepo-com.7cdcda169a5bd89479680c3e9d582500.svg",
     "main.3bf03af3.css.map": "/Pizza/static/css/main.3bf03af3.css.map",
-    "main.6f2ba304.js.map": "/Pizza/static/js/main.6f2ba304.js.map",
+    "main.f75934b0.js.map": "/Pizza/static/js/main.f75934b0.js.map",
     "453.f33d9648.chunk.js.map": "/Pizza/static/js/453.f33d9648.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3bf03af3.css",
-    "static/js/main.6f2ba304.js"
+    "static/js/main.f75934b0.js"
   ]
 }
