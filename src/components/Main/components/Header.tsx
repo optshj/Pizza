@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { ReactComponent as Logosvg } from "../../../assets/logo/LogoTransverse.svg"
 import { ReactComponent as Alarmsvg } from "../../../assets/icon/bell-svgrepo-com-2.svg"
 import { ReactComponent as Cartsvg } from "../../../assets/icon/shopping-cart-svgrepo-com.svg"
+import { Link } from "react-router-dom"
 
 const HeaderWrapper = styled.div`
     display: flex;
@@ -31,7 +32,9 @@ export default function Header() {
         <HeaderWrapper>
             <Logo />
             <div>
-                <Alarm />
+                <Link to="/main/alarm">
+                    <Alarm />
+                </Link>
                 <Cart />
             </div>
         </HeaderWrapper>
