@@ -12,7 +12,6 @@ const Wrapper = styled.div`
     flex-direction: column;
     width: 100%;
 `
-
 const MainPageWrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -24,7 +23,6 @@ const MainPageWrapper = styled.div`
     margin: 0 auto;
     gap: 25px;
 `
-
 const SearchWrapper = styled.div`
     display: flex;
     width: 350px;
@@ -35,7 +33,6 @@ const SearchWrapper = styled.div`
     border: 2px solid rgba(235, 172, 100, 1);
     margin: 20px 20px 0;
 `
-
 const Input = styled.input`
     width: 250px;
     border-radius: 26.5px;
@@ -53,7 +50,6 @@ const Input = styled.input`
         border-color: rgba(235, 172, 100, 1);
     }
 `
-
 const SearchIcon = styled.div`
     display: flex;
     justify-content: center;
@@ -108,7 +104,7 @@ const PpizzangBot = styled.button`
     }
 `
 
-const Main: React.FC = () => {
+export default function Main() {
     return (
         <Wrapper>
             <Header />
@@ -132,5 +128,3 @@ const Main: React.FC = () => {
         </Wrapper>
     )
 }
-
-export default Main
