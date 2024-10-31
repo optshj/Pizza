@@ -1,8 +1,10 @@
-import { useState } from "react"
+import { useState, memo, useEffect, useCallback } from "react"
 import styled from "styled-components"
 
-import { ReactComponent as CheckCirlceDisable } from "../../../assets/icon/CheckCirlceDisable.svg"
+import { ReactComponent as CheckCircleDisable } from "../../../assets/icon/CheckCirlceDisable.svg"
 import { ReactComponent as CheckCircleActive } from "../../../assets/icon/CheckCirlceActive.svg"
+
+import { usePrice } from "../../../context/PriceContext"
 
 const ItemWrapper = styled.div`
     display: flex;
@@ -44,24 +46,41 @@ interface ComponentsProps {
     title: string
     author: string
 }
-export default function Components({ price, date, title, author }: ComponentsProps) {
+export default memo(function Components({ price, date, title, author }: ComponentsProps) {
     const [isSelect, setIsSelect] = useState(true)
+    const { addPrice, removePrice } = usePrice()
+
+    const addInitialPrice = useCallback(() => addPrice(price), [addPrice, price])
+    const removeInitialPrice = useCallback(() => removePrice(price), [removePrice, price])
+
+    useEffect(() => {
+        addInitialPrice()
+        return () => {
+            removeInitialPrice()
+        }
+    }, [addInitialPrice, removeInitialPrice])
+
     const onClick = () => {
         setIsSelect(!isSelect)
+        if (isSelect) {
+            removePrice(price)
+        } else {
+            addPrice(price)
+        }
     }
 
     return (
         <ItemWrapper onClick={onClick}>
-            {isSelect ? <CheckCircleActive /> : <CheckCirlceDisable />}
+            {isSelect ? <CheckCircleActive /> : <CheckCircleDisable />}
             <ExplainWrapper>
                 <Title>{title}</Title>
                 <Author>{author}</Author>
             </ExplainWrapper>
             <PriceWrapper>
-                <Price>{formatPrice(price)}일</Price>
+                <Price>{formatPrice(price)}원</Price>
                 <Price>/</Price>
                 <Price>{date}일</Price>
             </PriceWrapper>
         </ItemWrapper>
     )
-}
+})
