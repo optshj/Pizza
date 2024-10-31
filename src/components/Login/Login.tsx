@@ -22,7 +22,7 @@ const Character = styled(Charactersvg)`
 `
 const ButtonWrapper = styled.div`
     position: absolute;
-    bottom: 10vh;
+    bottom: 5vh;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import Header from "../Main/components/Header"
 import NavigationBar from "../Main/components/NavigationBar"
+import Item from "./components/Item"
 
 const Wrapper = styled.div`
     display: flex;
@@ -12,6 +13,7 @@ export default function Feed() {
     return (
         <Wrapper>
             <Header />
+            <Item />
             <NavigationBar />
         </Wrapper>
     )
