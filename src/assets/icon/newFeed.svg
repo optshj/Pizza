@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="115" height="115" viewBox="0 0 115 115">
+    <defs>
+        <filter id="oin775ioba" x="0" y="0" width="115" height="115" filterUnits="userSpaceOnUse">
+            <feOffset/>
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feFlood flood-opacity=".161"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g data-name="그룹 60">
+        <g style="filter:url(#oin775ioba)" data-name="그룹 21">
+            <path data-name="사각형 25" d="M48.5 0A48.5 48.5 0 0 1 97 48.5v33.007A15.493 15.493 0 0 1 81.507 97H48.5A48.5 48.5 0 0 1 0 48.5 48.5 48.5 0 0 1 48.5 0z" transform="translate(8.998 8.998)" style="fill:#fff"/>
+        </g>
+        <g data-name="그룹 59">
+            <path data-name="패스 1802" d="M84.627 10.582a1.592 1.592 0 0 1 0 2.248l-3.321 3.324-6.369-6.368 3.321-3.324a1.592 1.592 0 0 1 2.251 0l4.117 4.117zM79.055 18.4l-6.368-6.368-21.694 21.7a1.592 1.592 0 0 0-.385.624l-2.563 7.687a.8.8 0 0 0 1.006 1.006l7.687-2.563a1.592 1.592 0 0 0 .624-.382l21.694-21.7z" transform="translate(-2.271 28.419)" style="fill:#ebac64"/>
+            <path data-name="패스 1803" d="M12 51.8a4.776 4.776 0 0 0 4.776 4.776H51.8a4.776 4.776 0 0 0 4.779-4.776V32.7a1.592 1.592 0 1 0-3.184 0v19.1a1.592 1.592 0 0 1-1.595 1.594H16.776a1.592 1.592 0 0 1-1.592-1.594V16.776a1.592 1.592 0 0 1 1.592-1.592h20.7a1.592 1.592 0 1 0 0-3.184h-20.7A4.776 4.776 0 0 0 12 16.776z" transform="translate(24.179 24.007)" style="fill-rule:evenodd;fill:#ebac64"/>
+        </g>
+    </g>
+</svg>

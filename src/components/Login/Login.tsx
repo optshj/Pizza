@@ -22,7 +22,7 @@ const Character = styled(Charactersvg)`
 `
 const ButtonWrapper = styled.div`
     position: absolute;
-    bottom: 10vh;
+    bottom: 5vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,6 +30,7 @@ const ButtonWrapper = styled.div`
 const KakaoLogin = styled.button`
     width: 331px;
     height: 64px;
+    font-weight: 700;
     background-color: rgb(250, 225, 0);
     border-radius: 13px;
     font-size: 22px;
