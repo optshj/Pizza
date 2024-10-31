@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { usePrice } from "../../../context/PriceContext"
 
 const Wrapper = styled.div`
     width: 100%;
@@ -42,12 +43,16 @@ const SumText = styled.div`
     white-space: nowrap;
 `
 
+const formatPrice = (price: number) => {
+    return new Intl.NumberFormat("ko-KR").format(price)
+}
 export default function Footer() {
+    const { totalPrice } = usePrice()
     return (
         <Wrapper>
             <TextWrapper>
                 <TotalText>{"총 합계"}</TotalText>
-                <SumText>{"2000원"}</SumText>
+                <SumText>{formatPrice(totalPrice)}원</SumText>
             </TextWrapper>
             <Button>{"피자 주문하기"}</Button>
         </Wrapper>

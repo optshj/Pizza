@@ -1,3 +1,4 @@
+import { memo } from "react"
 import styled from "styled-components"
 
 import { ReactComponent as PizzaLv1 } from "../../../assets/icon/Pizza1.svg"
@@ -40,7 +41,7 @@ interface ItemProps {
     level: number
     components: ComponentsProps[]
 }
-export default function Item({ userName, level, components }: ItemProps) {
+export default memo(function Item({ userName, level, components }: ItemProps) {
     return (
         <FadeIn>
             <Wrapper>
@@ -60,4 +61,4 @@ export default function Item({ userName, level, components }: ItemProps) {
             </Wrapper>
         </FadeIn>
     )
-}
+})

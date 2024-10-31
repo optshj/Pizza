@@ -2,6 +2,7 @@ import styled from "styled-components"
 import Rectangle from "./components/Rectangle"
 import { Link } from "react-router-dom"
 import { ReactComponent as PreviousIcon } from "../../assets/icon/previousArrowBackSvgrepoCom.svg"
+
 import { prs1, prs2, prs3 } from "./components/TextPresets"
 
 const Wrapper = styled.div`
