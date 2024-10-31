@@ -1,0 +1,82 @@
+{
+  "users": [
+    {
+      "userName": "할라피뇨피자",
+      "level": 2,
+      "components": [
+        {
+          "price": 2000,
+          "date": 7,
+          "title": "소년이 온다",
+          "author": "한강"
+        },
+        {
+          "price": 2500,
+          "date": 5,
+          "title": "모순",
+          "author": "양귀자"
+        },
+        {
+          "price": 1800,
+          "date": 4,
+          "title": "나는 나로 살기로 했다",
+          "author": "김수현"
+        }
+      ]
+    },
+    {
+      "userName": "주름피자",
+      "level": 3,
+      "components": [
+        {
+          "price": 3200,
+          "date": 6,
+          "title": "아몬드",
+          "author": "손원평"
+        },
+        {
+          "price": 2900,
+          "date": 5,
+          "title": "참을 수 없는 존재의 가벼움",
+          "author": "밀란 쿤데라"
+        },
+        {
+          "price": 1800,
+          "date": 4,
+          "title": "미드나잇 라이브러리",
+          "author": "매트 헤이그"
+        }
+      ]
+    },
+    {
+      "userName": "아가피자",
+      "level": 1,
+      "components": [
+        {
+          "price": 2100,
+          "date": 5,
+          "title": "무궁화 꽃이 피었습니다",
+          "author": "김진명"
+        },
+        {
+          "price": 2800,
+          "date": 6,
+          "title": "살인자의 기억법",
+          "author": "김영하"
+        },
+        {
+          "price": 1600,
+          "date": 3,
+          "title": "미움받을 용기",
+          "author": "기시미 이치로"
+        },
+        {
+          "price": 2700,
+          "date": 7,
+          "title": "데미안",
+          "author": "헤르만 헤세"
+        }
+      ]
+    }
+  ]
+}

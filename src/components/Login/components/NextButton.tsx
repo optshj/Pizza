@@ -11,13 +11,16 @@ const Text = styled(Link)<{ $isActive?: boolean }>`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 331px;
+    width: calc(100vw - 80px);
     height: 64px;
     background-color: ${props => (props.$isActive ? props.theme.color.red : "#bcbcbc")};
     border-radius: 13px;
     font-size: 22px;
     color: #ffffff;
     transition: background-color 0.5s ease;
+    @media (min-width: 600px) {
+        width: 510px;
+    }
 `
 
 interface NextButtonProps {

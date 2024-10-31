@@ -22,6 +22,7 @@ const Cart = styled(Cartsvg)`
     width: 45px;
     height: 45px;
     color: ${({ theme }) => theme.color.red};
+    margin-left: 15px;
 `
 const Logo = styled(Logosvg)`
     height: 45px;
@@ -35,7 +36,9 @@ export default function Header() {
                 <Link to="/main/alarm">
                     <Alarm />
                 </Link>
-                <Cart />
+                <Link to="/main/basket">
+                    <Cart />
+                </Link>
             </div>
         </HeaderWrapper>
     )

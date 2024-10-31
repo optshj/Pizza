@@ -5,8 +5,9 @@ import Kakao from "../../../api/KakaoAPI"
 
 import { ReactComponent as FullHeartsvg } from "../../../assets/icon/fullheart.svg"
 import { ReactComponent as Commentsvg } from "../../../assets/icon/chat.svg"
-import { ReactComponent as Booksvg } from "../../../assets/icon/fullheart.svg"
 import { ReactComponent as EmptyHeartsvg } from "../../../assets/icon/emptyHeart.svg"
+
+import FadeIn from "../../Login/components/FadeIn"
 
 const Wrapper = styled.div`
     width: 100%;
@@ -61,6 +62,7 @@ const BookImage = styled.img`
     height: 158px;
     background-color: #8d8d8d;
     margin-left: 20px;
+    object-fit: cover;
 `
 const FeedWrapper = styled.div`
     display: flex;
@@ -79,7 +81,6 @@ const BookName = styled.div`
     white-space: nowrap;
     max-width: 90%;
 `
-
 const AuthorName = styled.div`
     font-size: 15px;
     color: #797979;
@@ -118,10 +119,6 @@ const CommentIcon = styled(Commentsvg)`
     width: 20px;
     height: 20px;
 `
-const BookmarkIcon = styled(Booksvg)`
-    width: 50px;
-    height: 50px;
-`
 
 interface BookProps {
     title: string
@@ -133,9 +130,10 @@ interface ItemProps {
     userName: string
     time: string
     bookName: string
+    delay?: string
     isLiked?: boolean
 }
-export default function Item({ userName, time, bookName, isLiked }: ItemProps) {
+export default function Item({ userName, time, bookName, isLiked, delay = "0s" }: ItemProps) {
     const [liked, setLiked] = useState(isLiked)
     const [books, setBooks] = useState<BookProps>({
         title: "채식주의자",
@@ -157,31 +155,32 @@ export default function Item({ userName, time, bookName, isLiked }: ItemProps) {
     }, [bookName])
 
     return (
-        <Wrapper>
-            <Header>
-                <LeftWrapper>
-                    <Profile />
-                    <UserWrapper>
-                        <UserName>{userName}</UserName>
-                        <Time>{time}</Time>
-                    </UserWrapper>
-                </LeftWrapper>
-                <BookmarkIcon />
-            </Header>
+        <FadeIn delay={delay}>
+            <Wrapper>
+                <Header>
+                    <LeftWrapper>
+                        <Profile />
+                        <UserWrapper>
+                            <UserName>{userName}</UserName>
+                            <Time>{time}</Time>
+                        </UserWrapper>
+                    </LeftWrapper>
+                </Header>
 
-            <ContentWrapper>
-                <BookImage src={books.thumbnail} />
-                <FeedWrapper>
-                    <BookName>{books.title}</BookName>
-                    <AuthorName>{books.authors} 지음</AuthorName>
-                    <Text>{books.contents}</Text>
+                <ContentWrapper>
+                    <BookImage src={books.thumbnail} alt={"bookImage"} loading="lazy" />
+                    <FeedWrapper>
+                        <BookName>{books.title}</BookName>
+                        <AuthorName>{books.authors} 지음</AuthorName>
+                        <Text>{books.contents}</Text>
 
-                    <IconWrapper>
-                        <div onClick={onLike}>{liked ? <FullHeartIcon /> : <EmptyHeartIcon />}</div>
-                        <CommentIcon />
-                    </IconWrapper>
-                </FeedWrapper>
-            </ContentWrapper>
-        </Wrapper>
+                        <IconWrapper>
+                            <div onClick={onLike}>{liked ? <FullHeartIcon /> : <EmptyHeartIcon />}</div>
+                            <CommentIcon />
+                        </IconWrapper>
+                    </FeedWrapper>
+                </ContentWrapper>
+            </Wrapper>
+        </FadeIn>
     )
 }
