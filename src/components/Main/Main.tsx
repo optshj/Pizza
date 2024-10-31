@@ -77,7 +77,7 @@ const PpizzangBot = styled.button`
     background-color: #ffffff;
     border-radius: 48.5px;
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
-    position: absolute;
+    position: fixed;
     cursor: pointer;
     bottom: 100px;
     z-index: 1000;
@@ -88,19 +88,15 @@ const PpizzangBot = styled.button`
     border-bottom-right-radius: 15.5px; /* SwiftUI와 최대한 비슷하게 설정 */
     border-top-right-radius: 48.5px;
 
+    right: 20px;
     svg {
         margin-left: 3px;
         margin-top: 8px;
         width: 65px;
         height: 65px;
     }
-    @media (max-width: 600px) {
-        right: 20px;
-    }
-
     @media (min-width: 600px) {
-        left: calc(50% + 250px); /* 600px 너비 기준으로 위치 고정 */
-        transform: translateX(-100%); /* 600px 기준 위치 유지 */
+        right: calc((100% - 600px) / 2 + 20px);
     }
 `
 

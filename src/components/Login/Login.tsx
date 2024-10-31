@@ -30,6 +30,7 @@ const ButtonWrapper = styled.div`
 const KakaoLogin = styled.button`
     width: 331px;
     height: 64px;
+    font-weight: 700;
     background-color: rgb(250, 225, 0);
     border-radius: 13px;
     font-size: 22px;
