@@ -1,4 +1,4 @@
-import { useState, memo, useEffect } from "react"
+import { useState, memo, useEffect, useCallback } from "react"
 import styled from "styled-components"
 
 import { ReactComponent as CheckCircleDisable } from "../../../assets/icon/CheckCirlceDisable.svg"
@@ -50,12 +50,15 @@ export default memo(function Components({ price, date, title, author }: Componen
     const [isSelect, setIsSelect] = useState(true)
     const { addPrice, removePrice } = usePrice()
 
+    const addInitialPrice = useCallback(() => addPrice(price), [addPrice, price])
+    const removeInitialPrice = useCallback(() => removePrice(price), [removePrice, price])
+
     useEffect(() => {
-        addPrice(price)
+        addInitialPrice()
         return () => {
-            removePrice(price)
+            removeInitialPrice()
         }
-    }, []) // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [addInitialPrice, removeInitialPrice])
 
     const onClick = () => {
         setIsSelect(!isSelect)
