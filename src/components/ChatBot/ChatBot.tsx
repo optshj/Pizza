@@ -150,24 +150,14 @@ const SendIcon = styled(Sendsvg)`
 export default function ChatBot() {
     const [keyboardHeight, setKeyboardHeight] = useState(0)
 
-    useEffect(() => {
-        const handleResize = () => {
-            const visualViewportHeight = window.visualViewport?.height || 0
-            const windowHeight = window.innerHeight
-            const keyboardHeight = windowHeight - visualViewportHeight
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener("resize", () => {
+            let visualViewportHeight = window.visualViewport?.height || 0
+            let windowHeight = window.innerHeight
+            let keyboardHeight = windowHeight - visualViewportHeight
             setKeyboardHeight(keyboardHeight)
-        }
-
-        if (window.visualViewport) {
-            window.visualViewport.addEventListener("resize", handleResize)
-        }
-
-        return () => {
-            if (window.visualViewport) {
-                window.visualViewport.removeEventListener("resize", handleResize)
-            }
-        }
-    }, [])
+        })
+    }
     const [messages, setMessages] = useState<{ text: string; isUser: boolean }[]>([
         {
             text: "안녕! 난 삐짱이라고 해 무엇을 도와줄까?",
