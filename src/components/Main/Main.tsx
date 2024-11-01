@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 
 import Header from "./components/Header"
@@ -116,9 +117,11 @@ export default function Main() {
                 <Item text={"ㅇㅇ님의 관심 책장"} />
             </MainPageWrapper>
             <NavBar>
-                <PpizzangBot>
-                    <Ppizzangsvg />
-                </PpizzangBot>
+                <Link to="/main/chatbot">
+                    <PpizzangBot>
+                        <Ppizzangsvg />
+                    </PpizzangBot>
+                </Link>
                 <NavigationBar />
             </NavBar>
         </Wrapper>
