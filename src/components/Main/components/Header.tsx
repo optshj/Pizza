@@ -36,7 +36,9 @@ const Logo = styled(Logosvg)`
 export default function Header() {
     return (
         <HeaderWrapper>
-            <Logo />
+            <Link to="/main/home">
+                <Logo />
+            </Link>
             <IconWrapper>
                 <Link to="/main/alarm">
                     <Alarm />

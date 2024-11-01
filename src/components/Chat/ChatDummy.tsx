@@ -140,14 +140,16 @@ const MessageWrapper = styled.div<MessageProps>`
     flex-direction: ${props => (props.isUser ? "row-reverse" : "row")};
 `
 
-const InputContainer = styled.div`
+const InputContainer = styled.div<{ $keyboardHeight?: number }>`
     width: 100%;
-    height: 90px;
+    max-width: 600px;
     display: flex;
     align-items: center;
     padding: 0 16px;
     box-sizing: border-box;
-    background-color: #ffffff;
+    position: absolute;
+    bottom: ${props => Math.max(props.$keyboardHeight ?? 0, 0) + "px"};
+    background-color: #ffffff; // 배경색 설정
 `
 
 const TextInput = styled.input`
@@ -179,6 +181,7 @@ const SendIcon = styled(Sendsvg)`
 `
 
 export default function ChatRoom() {
+    const [keyboardHeight, setKeyboardHeight] = useState(0)
     const { id } = useParams<{ id: string }>()
     const chatMessages: ChatMessage[] = useMemo(() => (id && chatData[id] ? chatData[id] : []), [id])
     const [inputValue, setInputValue] = useState("")
@@ -200,6 +203,14 @@ export default function ChatRoom() {
             setInputValue("")
         }
     }
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener("resize", () => {
+            let visualViewportHeight = window.visualViewport?.height || 0
+            let windowHeight = window.innerHeight
+            let keyboardHeight = windowHeight - visualViewportHeight
+            setKeyboardHeight(keyboardHeight)
+        })
+    }
 
     return (
         <>
@@ -220,7 +231,7 @@ export default function ChatRoom() {
                     </Message>
                 ))}
             </ChatContainer>
-            <InputContainer>
+            <InputContainer $keyboardHeight={keyboardHeight}>
                 <TextInput
                     type="text"
                     value={inputValue}
