@@ -5,6 +5,10 @@ import Home from "../components/Main/Main"
 import Feed from "../components/Feed/Feed"
 import Alarm from "../components/Alarm/Alarm"
 import Basket from "../components/Basket/Basket"
+import ChatBot from "../components/ChatBot/ChatBot"
+import Chat from "../components/Chat/Chat"
+import ChatRoom from "../components/Chat/ChatDummy"
+import MyPage from "../components/MyPage/MyPage"
 
 const Wrapper = styled.div`
     width: 100%;
@@ -22,6 +26,10 @@ export default function Main() {
                 <Route path="/feed" element={<Feed />} />
                 <Route path="/alarm" element={<Alarm />} />
                 <Route path="/basket" element={<Basket />} />
+                <Route path="/chatbot" element={<ChatBot />} />
+                <Route path="/chat" element={<Chat />} />
+                <Route path="/chat/:id" element={<ChatRoom />} />
+                <Route path="/mypage" element={<MyPage />} />
             </Routes>
         </Wrapper>
     )
