@@ -39,13 +39,13 @@ const UserWrapper = styled.div`
 `
 const UserName = styled.div`
     font-size: 20px;
-    font-weight: 600;
+    font-weight: bold;
     color: #000000;
 `
 const Time = styled.div`
     font-size: 14px;
     color: #797979;
-    font-weight: 600;
+    font-weight: bold;
 `
 const ContentWrapper = styled.div`
     width: calc(100% - 48px);

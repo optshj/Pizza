@@ -30,7 +30,7 @@ const Overlay = styled.div<{ $isSelect: boolean }>`
 const Text = styled.div<{ $isSelect: boolean }>`
     color: #ffffff;
     font-size: 24px;
-    font-weight: 600;
+    font-weight: bold;
     position: absolute;
     opacity: ${({ $isSelect }) => ($isSelect ? 0 : 1)};
     white-space: nowrap;

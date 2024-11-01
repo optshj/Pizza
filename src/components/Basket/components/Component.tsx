@@ -19,7 +19,7 @@ const ExplainWrapper = styled.div`
 `
 const Title = styled.div`
     font-size: 20px;
-    font-weight: 600;
+    font-weight: bold;
 `
 const Author = styled.div`
     font-size: 15px;
@@ -33,8 +33,8 @@ const PriceWrapper = styled.div`
     flex-direction: row;
 `
 const Price = styled.div`
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: bold;
 `
 const formatPrice = (price: number) => {
     return new Intl.NumberFormat("ko-KR").format(price)

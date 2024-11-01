@@ -22,7 +22,7 @@ const ItemWrapper = styled.div`
 `
 const Title = styled.div`
     font-size: 25px;
-    font-weight: 600;
+    font-weight: bold;
     color: #000;
     margin-top: 80px;
     margin-left: 20px;
