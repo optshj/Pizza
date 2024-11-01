@@ -152,15 +152,21 @@ export default function ChatBot() {
 
     useEffect(() => {
         const handleResize = () => {
-            const newKeyboardHeight =
-                window.innerHeight < document.documentElement.clientHeight
-                    ? document.documentElement.clientHeight - window.innerHeight
-                    : 0
-            setKeyboardHeight(newKeyboardHeight)
+            const visualViewportHeight = window.visualViewport?.height || 0
+            const windowHeight = window.innerHeight
+            const keyboardHeight = windowHeight - visualViewportHeight
+            setKeyboardHeight(keyboardHeight)
         }
 
-        window.addEventListener("resize", handleResize)
-        return () => window.removeEventListener("resize", handleResize)
+        if (window.visualViewport) {
+            window.visualViewport.addEventListener("resize", handleResize)
+        }
+
+        return () => {
+            if (window.visualViewport) {
+                window.visualViewport.removeEventListener("resize", handleResize)
+            }
+        }
     }, [])
     const [messages, setMessages] = useState<{ text: string; isUser: boolean }[]>([
         {
