@@ -39,7 +39,7 @@ const TotalText = styled.div`
 const SumText = styled.div`
     color: #000;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: bold;
     white-space: nowrap;
 `
 

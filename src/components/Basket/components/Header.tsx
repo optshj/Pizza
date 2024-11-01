@@ -18,6 +18,7 @@ const HeaderText = styled.div`
     font-size: 25px;
     white-space: nowrap;
     margin: 17px;
+    font-weight: bold; /* 볼드 처리 추가 */
 `
 
 const PrevLink = styled(Link)`
@@ -30,6 +31,7 @@ const PrevLink = styled(Link)`
 const PrevIcon = styled(PreviousIcon)`
     cursor: pointer;
 `
+
 export default function Header() {
     return (
         <Wrapper>

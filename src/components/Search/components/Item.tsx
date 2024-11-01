@@ -37,7 +37,7 @@ const TitleWrapper = styled.div`
 `
 
 const Title = styled.div`
-    font-weight: 700;
+    font-weight: bold;
     font-size: 18px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -58,7 +58,7 @@ const Possession = styled.div`
     right: 20px;
     bottom: 20px;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: bold;
     color: #000;
 `
 
