@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import styled from "styled-components"
+import { useState } from "react"
 
 import Header from "./components/Header"
 import NavigationBar from "./components/NavigationBar"
@@ -9,7 +10,6 @@ import { ReactComponent as Searchsvg } from "../../assets/icon/search-svgrepo-co
 import { ReactComponent as Ppizzangsvg } from "../../assets/character/FaceRed.svg"
 
 import { useSearch } from "../../context/SearchContext"
-import { useState } from "react"
 
 const Wrapper = styled.div`
     display: flex;
@@ -142,9 +142,11 @@ export default function Main() {
                 <Item text={"ㅇㅇ님의 관심 책장"} />
             </MainPageWrapper>
             <NavBar>
-                <PpizzangBot>
-                    <Ppizzangsvg />
-                </PpizzangBot>
+                <Link to="/main/chatbot">
+                    <PpizzangBot>
+                        <Ppizzangsvg />
+                    </PpizzangBot>
+                </Link>
                 <NavigationBar />
             </NavBar>
         </Wrapper>

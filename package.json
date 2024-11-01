@@ -12,6 +12,7 @@
     "@types/react-dom": "^18.3.1",
     "axios": "^1.7.7",
     "canvas-confetti": "^1.9.3",
+    "cors": "^2.8.5",
     "gh-pages": "^6.2.0",
     "http-proxy-middleware": "^3.0.3",
     "prettier": "^3.3.3",
