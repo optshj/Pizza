@@ -10,7 +10,7 @@ import { ReactComponent as Cupper } from "../../../assets/icon/cupper.svg"
 
 const Wrapper = styled.div`
     width: calc(100% - 48px);
-    margin-top: 20px;
+    margin-top: 30px;
 `
 const TitleText = styled.div`
     width: 100%;
@@ -23,6 +23,7 @@ const TitleText = styled.div`
 `
 const Container = styled.div`
     position: relative;
+    margin-bottom: 10px;
     display: inline-block;
     width: 100%;
 `
@@ -46,10 +47,12 @@ interface BookProps {
     thumbnail: string
     contents: string
 }
+
 interface ImageItemProps {
     bookName: string
     medal?: ReactElement
 }
+
 function ImageItem({ bookName, medal }: ImageItemProps) {
     const [books, setBooks] = useState<BookProps>({
         title: "채식주의자",
@@ -57,6 +60,7 @@ function ImageItem({ bookName, medal }: ImageItemProps) {
         thumbnail: "",
         contents: ""
     })
+
     useEffect(() => {
         const kakao = Kakao()
         kakao
@@ -66,6 +70,7 @@ function ImageItem({ bookName, medal }: ImageItemProps) {
                 console.error(e)
             })
     }, [bookName])
+
     return (
         <Container>
             {medal && <IconWrapper>{medal}</IconWrapper>}
@@ -73,17 +78,30 @@ function ImageItem({ bookName, medal }: ImageItemProps) {
         </Container>
     )
 }
-export default function Item2({ text }: { text: string }) {
+
+interface ItemProps {
+    text: string
+    bookNames: string[]
+}
+
+export default function Item2({ text, bookNames }: ItemProps) {
     return (
         <Wrapper>
             <FadeIn delay="1s">
                 <TitleText>{text}</TitleText>
                 <ImageWrapper>
-                    <ImageItem bookName={"채식주의자"} medal={<Gold />} />
-                    <ImageItem bookName={"소년이온다"} medal={<Silver />} />
-                    <ImageItem bookName={"작별하지 않는다"} medal={<Cupper />} />
-                    <ImageItem bookName={"물고기는 존재하지 않는다"} />
-                    <ImageItem bookName={"불편한 편의점"} />
+                    {bookNames.map((bookName, index) => {
+                        let medal
+                        if (index === 0) {
+                            medal = <Gold />
+                        } else if (index === 1) {
+                            medal = <Silver />
+                        } else if (index === 2) {
+                            medal = <Cupper />
+                        }
+
+                        return <ImageItem key={index} bookName={bookName} medal={medal} />
+                    })}
                 </ImageWrapper>
             </FadeIn>
         </Wrapper>
