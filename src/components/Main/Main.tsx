@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 import styled from "styled-components"
 import { useState } from "react"
 
@@ -16,6 +16,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     width: 100%;
 `
+
 const MainPageWrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -26,16 +27,20 @@ const MainPageWrapper = styled.div`
     background-color: #f5f5f5;
     margin: 0 auto;
     gap: 25px;
+    padding-bottom: 100px;
 `
 const SearchWrapper = styled.div`
     display: flex;
-    width: 350px;
+    width: 75%;
+    max-width: 475px;
+    min-width: 295px;
     height: 50px;
     border-radius: 26.5px;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: rgba(229, 229, 229, 1);
     border: 2px solid rgba(235, 172, 100, 1);
     margin: 20px 20px 0;
+    padding: 0 20px; /* 양옆에 15px의 여백 추가 */
 `
 const Input = styled.input`
     width: 250px;
