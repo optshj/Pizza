@@ -36,7 +36,7 @@ const Header = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: fixed;
     color: #cb3d3f;
     font-size: 25px;
     font-weight: bold;
@@ -53,6 +53,7 @@ const BackArrow = styled(BackArrowIcon)`
     fill: #ebac64;
 `
 const ChatContainer = styled.div`
+    margin-top: 70px;
     width: 100%;
     display: flex;
     flex-direction: column;
