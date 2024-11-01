@@ -8,7 +8,7 @@ import image5 from "../../../assets/ItemImage/image5.jpg"
 
 const Wrapper = styled.div`
     width: calc(100% - 48px);
-    margin-top: 20px;
+    margin-top: 30px;
 `
 const TitleText = styled.div`
     width: 100%;

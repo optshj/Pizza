@@ -7,6 +7,8 @@ import Item1 from "./components/Item1"
 import Item2 from "./components/Item2"
 import Item3 from "./components/Item3"
 
+import booksData from "../../data/book.json"
+
 import { ReactComponent as Ppizzangsvg } from "../../assets/character/FaceRed.svg"
 
 import Search from "./components/Serach"
@@ -61,14 +63,17 @@ const PpizzangBot = styled.button`
 `
 
 export default function Main() {
+    const bookData = booksData.items
     return (
         <Wrapper>
             <Header />
             <MainPageWrapper>
                 <Search />
-                <Item1 text={"이 책들부터 빌려볼래?📖"} />
-                <Item2 text={"전국 대여률 TOP5 도서🏆"} />
-                <Item3 text={"내가 끼워둔 책갈피🔖"} />
+                <Item1 text={bookData[0]?.text} />
+                <Item2 text={bookData[1]?.text} bookNames={bookData[1]?.bookNames} />
+                <Item3 text={bookData[2]?.text} bookNames={bookData[2]?.bookNames} />
+                <Item3 text={bookData[3]?.text} bookNames={bookData[3]?.bookNames} />
+                <Item3 text={bookData[4]?.text} bookNames={bookData[4]?.bookNames} />
             </MainPageWrapper>
             <NavBar>
                 <Link to="/main/chatbot">
