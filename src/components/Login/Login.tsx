@@ -79,7 +79,6 @@ export default function Login() {
                         <Link to="/name">{"다른 계정으로 로그인하기"}</Link>
                     </OtherLogin>
                 </FadeIn>
-                <Link to="/main/home">메인으로가기</Link>
             </ButtonWrapper>
         </>
     )
