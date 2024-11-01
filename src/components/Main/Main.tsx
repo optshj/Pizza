@@ -3,7 +3,9 @@ import styled from "styled-components"
 
 import Header from "./components/Header"
 import NavigationBar from "./components/NavigationBar"
-import Item from "./components/Item"
+import Item1 from "./components/Item1"
+import Item2 from "./components/Item2"
+import Item3 from "./components/Item3"
 
 import { ReactComponent as Ppizzangsvg } from "../../assets/character/FaceRed.svg"
 
@@ -64,9 +66,9 @@ export default function Main() {
             <Header />
             <MainPageWrapper>
                 <Search />
-                <Item text={"우리동네 핫한🔥 책장"} />
-                <Item text={"지금 인기있는 베스트셀러"} />
-                <Item text={"ㅇㅇ님의 관심 책장"} />
+                <Item1 text={"이 책들부터 빌려볼래?📖"} />
+                <Item2 text={"전국 대여률 TOP5 도서🏆"} />
+                <Item3 text={"내가 끼워둔 책갈피🔖"} />
             </MainPageWrapper>
             <NavBar>
                 <Link to="/main/chatbot">

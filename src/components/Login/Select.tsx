@@ -8,7 +8,7 @@ import Item from "./components/Item"
 import FadeIn from "./components/FadeIn"
 
 const TextWrapper = styled.div`
-    margin: 100px 20px 20px;
+    margin: 100px 20px 50px;
 `
 const Blcok = styled.div`
     width: 20px;

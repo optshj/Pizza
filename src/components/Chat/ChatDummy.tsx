@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef, useMemo } from "react"
 import { Link, useParams } from "react-router-dom"
 import styled, { createGlobalStyle } from "styled-components"
+
 import FaceYellow from "../../assets/character/FaceYellow.svg"
 import { ReactComponent as BackArrowIcon } from "../../assets/icon/previous-arrow-back-svgrepo-com.svg"
+import { ReactComponent as Sendsvg } from "../../assets/icon/send.svg"
 
 // 메시지에 사용되는 Props 인터페이스 정의
 interface MessageProps {
@@ -50,6 +52,7 @@ const GlobalStyle = createGlobalStyle`
 
 const Header = styled.div`
     width: 100%;
+    position: fixed;
     height: 69.3px;
     background-color: #ffffff;
     display: flex;
@@ -75,7 +78,7 @@ const BackArrow = styled(BackArrowIcon)`
 
 const ChatContainer = styled.div`
     width: 100%;
-    height: calc(100vh - 69.3px - 60px);
+    height: 100vh;
     display: flex;
     flex-direction: column;
     padding: clamp(8px, 4vw, 16px);
@@ -137,14 +140,16 @@ const MessageWrapper = styled.div<MessageProps>`
     flex-direction: ${props => (props.isUser ? "row-reverse" : "row")};
 `
 
-const InputContainer = styled.div`
+const InputContainer = styled.div<{ $keyboardHeight?: number }>`
     width: 100%;
-    height: 90px;
+    max-width: 600px;
     display: flex;
     align-items: center;
     padding: 0 16px;
     box-sizing: border-box;
-    background-color: #ffffff;
+    position: absolute;
+    bottom: ${props => Math.max(props.$keyboardHeight ?? 0, 0) + "px"};
+    background-color: #ffffff; // 배경색 설정
 `
 
 const TextInput = styled.input`
@@ -159,20 +164,6 @@ const TextInput = styled.input`
     box-sizing: border-box;
     color: #333;
 `
-
-const SendButton = styled.button`
-    width: 60px;
-    height: 45px;
-    margin-left: 8px;
-    background-color: #cb3d3f;
-    color: #fff;
-    font-weight: bold;
-    border: none;
-    border-radius: 22px;
-    cursor: pointer;
-    outline: none;
-`
-
 const StyledLink = styled(Link)`
     position: absolute;
     left: 0px;
@@ -181,8 +172,16 @@ const StyledLink = styled(Link)`
     display: flex;
     align-items: center;
 `
+const SendIcon = styled(Sendsvg)`
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+`
 
 export default function ChatRoom() {
+    const [keyboardHeight, setKeyboardHeight] = useState(0)
     const { id } = useParams<{ id: string }>()
     const chatMessages: ChatMessage[] = useMemo(() => (id && chatData[id] ? chatData[id] : []), [id])
     const [inputValue, setInputValue] = useState("")
@@ -204,6 +203,14 @@ export default function ChatRoom() {
             setInputValue("")
         }
     }
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener("resize", () => {
+            let visualViewportHeight = window.visualViewport?.height || 0
+            let windowHeight = window.innerHeight
+            let keyboardHeight = windowHeight - visualViewportHeight
+            setKeyboardHeight(keyboardHeight)
+        })
+    }
 
     return (
         <>
@@ -224,7 +231,7 @@ export default function ChatRoom() {
                     </Message>
                 ))}
             </ChatContainer>
-            <InputContainer>
+            <InputContainer $keyboardHeight={keyboardHeight}>
                 <TextInput
                     type="text"
                     value={inputValue}
@@ -236,7 +243,7 @@ export default function ChatRoom() {
                     }}
                     placeholder="메시지를 입력하세요..."
                 />
-                <SendButton onClick={handleSendMessage}>보내기</SendButton>
+                <SendIcon onClick={handleSendMessage} />
             </InputContainer>
         </>
     )

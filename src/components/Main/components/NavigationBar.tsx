@@ -62,7 +62,7 @@ export default function NavigationBar() {
         <Navigation>
             <Item icon={<HomeIcon />} label={"홈"} link={"home"} />
             <Item icon={<FeedIcon />} label={"피드"} link={"feed"} />
-            <Item icon={<StoreIcon />} label={"내가게"} link={"store"} />
+            <Item icon={<StoreIcon />} label={"내가게"} link={"mystore"} />
             <Item icon={<ChatIcon />} label={"채팅"} link={"chat"} />
             <Item icon={<MyPageIcon />} label={"마이페이지"} link={"mypage"} />
         </Navigation>

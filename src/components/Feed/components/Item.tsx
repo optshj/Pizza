@@ -20,7 +20,7 @@ const Header = styled.div`
     display: flex;
     width: calc(100% - 60px);
     align-items: center;
-    padding: 25px 0 20px;
+    padding: 25px 0 15px;
     justify-content: space-between;
 `
 const LeftWrapper = styled.div`
@@ -82,6 +82,7 @@ const BookName = styled.div`
     max-width: 90%;
 `
 const AuthorName = styled.div`
+    margin-bottom: 10px;
     font-size: 15px;
     color: #797979;
 `

@@ -1,16 +1,24 @@
 import { useState } from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { useNavigate } from "react-router-dom"
 
 import { useSearch } from "../../../context/SearchContext"
 
 import { ReactComponent as Searchsvg } from "../../../assets/icon/search-svgrepo-com.svg"
 
-import FadeIn from "../../Login/components/FadeIn"
-
+const fadeInUp = keyframes`
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+`
 const SearchWrapper = styled.div`
     display: flex;
-    width: calc(100% - 92px);
+    width: calc(100% - 84px);
     border-radius: 26.5px;
     justify-content: space-between;
     background-color: rgba(229, 229, 229, 1);
@@ -18,6 +26,8 @@ const SearchWrapper = styled.div`
     margin: 20px 20px 0;
     padding: 0 20px;
     align-items: center;
+    opacity: 0;
+    animation: ${fadeInUp} 1s forwards;
 `
 const Input = styled.input`
     width: 100%;
@@ -43,6 +53,7 @@ const SearchIcon = styled(Searchsvg)`
     width: 40px;
     height: 40px;
 `
+
 export default function Search() {
     const [serachText, setSearchText] = useState("")
     const { setSearchTerm } = useSearch()
@@ -56,19 +67,18 @@ export default function Search() {
         setSearchText("")
         navigate("/main/search")
     }
+
     return (
-        <FadeIn>
-            <SearchWrapper>
-                <Input
-                    placeholder="지금 읽고 싶은 책이 있나요?"
-                    onChange={onChange}
-                    value={serachText}
-                    onKeyPress={e => {
-                        if (e.key === "Enter") handleSearch()
-                    }}
-                />
-                <SearchIcon onClick={handleSearch} />
-            </SearchWrapper>
-        </FadeIn>
+        <SearchWrapper>
+            <Input
+                placeholder="지금 읽고 싶은 책이 있나요?"
+                onChange={onChange}
+                value={serachText}
+                onKeyPress={e => {
+                    if (e.key === "Enter") handleSearch()
+                }}
+            />
+            <SearchIcon onClick={handleSearch} />
+        </SearchWrapper>
     )
 }
