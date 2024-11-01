@@ -76,7 +76,7 @@ function ImageItem({ bookName, medal }: ImageItemProps) {
     return (
         <Container>
             {medal && <IconWrapper>{medal}</IconWrapper>}
-            <Items src={books.thumbnail} />
+            <Items src={books.thumbnail} loading="lazy" />
         </Container>
     )
 }

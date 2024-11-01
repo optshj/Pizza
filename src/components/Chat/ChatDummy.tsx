@@ -53,12 +53,13 @@ const GlobalStyle = createGlobalStyle`
 const Header = styled.div`
     width: 100%;
     position: fixed;
+    max-width: 600px;
     height: 69.3px;
     background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: fixed;
     color: #cb3d3f;
     font-size: 25px;
     font-weight: bold;
@@ -77,6 +78,7 @@ const BackArrow = styled(BackArrowIcon)`
 `
 
 const ChatContainer = styled.div`
+    margin-top: 70px;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -163,6 +165,7 @@ const TextInput = styled.input`
     outline: none;
     box-sizing: border-box;
     color: #333;
+    margin: 20px 0;
 `
 const StyledLink = styled(Link)`
     position: absolute;

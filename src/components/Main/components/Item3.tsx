@@ -75,7 +75,7 @@ function ImageItem({ bookName }: { bookName: string }) {
 
     return (
         <Container>
-            <Items src={books.thumbnail} />
+            <Items src={books.thumbnail} loading="lazy" />
             <DetailWrapper>
                 <Title>{books.title}</Title>
                 <Author>{books.authors}</Author>
