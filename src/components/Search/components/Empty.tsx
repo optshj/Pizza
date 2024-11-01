@@ -1,6 +1,7 @@
 import styled, { keyframes } from "styled-components"
 
-import { ReactComponent as PreviousIcon } from "../../../assets/icon/previousArrowBackSvgrepoCom.svg"
+import { useSearch } from "../../../context/SearchContext"
+import { ReactComponent as EmptyPizza } from "../../../assets/icon/emptyPizza.svg"
 
 const fadeInUp = keyframes`
     from {
@@ -20,16 +21,26 @@ const Wrapper = styled.div`
     animation: ${fadeInUp} 1s forwards;
     animation-delay: "0.5s";
 `
-const Icon = styled(PreviousIcon)``
+const Icon = styled(EmptyPizza)`
+    margin-bottom: 20px;
+`
 const Text = styled.div`
     font-size: 25px;
-    font-weight: 700;
+    font-weight: bold;
     color: #000;
 `
+const Emphasis = styled.span`
+    color: ${({ theme }) => theme.color.yellow};
+`
 export default function Empty() {
+    const { searchTerm } = useSearch()
+
     return (
         <Wrapper>
             <Icon />
+            <Text>
+                <Emphasis>{searchTerm}</Emphasis>에 대한
+            </Text>
             <Text>{"검색 결과가 없습니다"}</Text>
         </Wrapper>
     )

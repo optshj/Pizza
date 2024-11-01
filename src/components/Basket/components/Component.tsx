@@ -33,7 +33,7 @@ const PriceWrapper = styled.div`
     flex-direction: row;
 `
 const Price = styled.div`
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
 `
 const formatPrice = (price: number) => {

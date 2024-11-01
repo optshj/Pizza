@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import styled, { createGlobalStyle } from "styled-components"
 import FaceYellow from "../../assets/character/FaceYellow.svg"
 import { ReactComponent as BackArrowIcon } from "../../assets/icon/previous-arrow-back-svgrepo-com.svg"
+import { ReactComponent as Sendsvg } from "../../assets/icon/send.svg"
 
 interface MessageProps {
     isUser: boolean
@@ -141,20 +142,6 @@ const TextInput = styled.input`
     margin: 20px 0;
 `
 
-const SendButton = styled.button`
-    width: 60px; // 버튼 크기 확대
-    height: 45px; // 버튼 크기 확대
-    margin-left: 8px;
-    background-color: #cb3d3f;
-    color: #fff;
-    font-weight: bold;
-    border: none;
-    border-radius: 22px;
-    cursor: pointer;
-    outline: none;
-    white-space: nowrap;
-`
-
 const StyledLink = styled(Link)`
     position: absolute;
     left: 0px;
@@ -162,6 +149,13 @@ const StyledLink = styled(Link)`
     transform: translateY(-50%);
     display: flex;
     align-items: center;
+`
+const SendIcon = styled(Sendsvg)`
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    margin-right: 10px;
+    cursor: pointer;
 `
 
 export default function ChatBot() {
@@ -266,7 +260,7 @@ export default function ChatBot() {
                     }}
                     placeholder="메시지를 입력하세요..."
                 />
-                <SendButton onClick={handleSendMessage}>보내기</SendButton>
+                <SendIcon onClick={handleSendMessage} />
             </InputContainer>
         </>
     )

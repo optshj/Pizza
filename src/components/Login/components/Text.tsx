@@ -7,6 +7,7 @@ const Wrapper = styled.div<{ $red: boolean }>`
     line-height: 1.3;
     white-space: nowrap;
     font-weight: bold;
+    letter-spacing: -2px;
     color: ${props => (props.$red ? props.theme.color.red : "#000000")};
 `
 

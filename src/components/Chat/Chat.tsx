@@ -1,10 +1,19 @@
-import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { Link } from "react-router-dom"
 
 import Header from "../Main/components/Header"
 import NavigationBar from "../Main/components/NavigationBar"
-import FadeIn from "../Login/components/FadeIn"
+
+const fadeInUp = keyframes`
+    from {
+        opacity: 0;
+        transform: translateY(100vh);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+`
 
 // 더미 데이터
 const chatRooms = [
@@ -53,18 +62,16 @@ const MainPageWrapper = styled.div`
 const HeaderSpacer = styled.div`
     width: 100%;
     height: 10px;
-    background-color: #f0f0f0; // 회색 여백 추가
 `
 
 const ChatList = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1px;
-    background-color: #e0e0e0;
     width: 100%;
 `
 
-const ChatItem = styled(Link)`
+const ChatItem = styled(Link)<{ $delay: string }>`
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -77,6 +84,9 @@ const ChatItem = styled(Link)`
     &:hover {
         background-color: #f0f0f0;
     }
+    opacity: 0;
+    animation: ${fadeInUp} 1s forwards;
+    animation-delay: ${props => props.$delay || "0s"};
 `
 
 const ProfileCircle = styled.div`
@@ -151,20 +161,18 @@ export default function ChatListPage() {
             <HeaderSpacer /> {/* 헤더 아래에 회색 여백을 추가 */}
             <MainPageWrapper>
                 <ChatList>
-                    {chatRooms.map(room => (
-                        <FadeIn>
-                            <ChatItem key={room.id} to={`/main/chat/${room.id}`}>
-                                <ProfileCircle /> {/* 왼쪽에 동그라미 추가 */}
-                                <ChatInfo>
-                                    <ChatTitle>{room.name}</ChatTitle>
-                                    <ChatLastMessage>{room.lastMessage}</ChatLastMessage>
-                                </ChatInfo>
-                                <ChatTimeBadgeContainer>
-                                    <ChatTime>{room.timeAgo}</ChatTime>
-                                    {room.unreadCount > 0 && <UnreadBadge>{room.unreadCount}</UnreadBadge>}
-                                </ChatTimeBadgeContainer>
-                            </ChatItem>
-                        </FadeIn>
+                    {chatRooms.map((room, index) => (
+                        <ChatItem key={room.id} to={`/main/chat/${room.id}`} $delay={`${index * 0.15}s`}>
+                            <ProfileCircle /> {/* 왼쪽에 동그라미 추가 */}
+                            <ChatInfo>
+                                <ChatTitle>{room.name}</ChatTitle>
+                                <ChatLastMessage>{room.lastMessage}</ChatLastMessage>
+                            </ChatInfo>
+                            <ChatTimeBadgeContainer>
+                                <ChatTime>{room.timeAgo}</ChatTime>
+                                {room.unreadCount > 0 && <UnreadBadge>{room.unreadCount}</UnreadBadge>}
+                            </ChatTimeBadgeContainer>
+                        </ChatItem>
                     ))}
                 </ChatList>
             </MainPageWrapper>

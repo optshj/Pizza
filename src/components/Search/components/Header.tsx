@@ -18,6 +18,7 @@ const HeaderText = styled.div`
     font-size: 25px;
     white-space: nowrap;
     margin: 17px;
+    font-weight: bold;
 `
 
 const PrevLink = styled(Link)`

@@ -10,6 +10,7 @@ import ChatBot from "../components/ChatBot/ChatBot"
 import Chat from "../components/Chat/Chat"
 import ChatRoom from "../components/Chat/ChatDummy"
 import MyPage from "../components/MyPage/MyPage"
+import MyStore from "../components/MyStore/MyStore"
 
 const Wrapper = styled.div`
     width: 100%;
@@ -28,6 +29,7 @@ export default function Main() {
                 <Route path="/alarm" element={<Alarm />} />
                 <Route path="/basket" element={<Basket />} />
                 <Route path="/search" element={<Search />} />
+                <Route path="/mystore" element={<MyStore />} />
                 <Route path="/chatbot" element={<ChatBot />} />
                 <Route path="/chat" element={<Chat />} />
                 <Route path="/chat/:id" element={<ChatRoom />} />
