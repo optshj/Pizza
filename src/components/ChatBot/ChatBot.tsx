@@ -11,8 +11,6 @@ interface MessageProps {
 
 const GlobalStyle = createGlobalStyle`
   * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
   }
 
@@ -26,7 +24,11 @@ const GlobalStyle = createGlobalStyle`
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
 `
-
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+`
 const Header = styled.div`
     width: 100%;
     height: 69.3px;
@@ -41,7 +43,6 @@ const Header = styled.div`
     letter-spacing: -0.1px;
     padding: 0 clamp(8px, 4vw, 16px);
 `
-
 const BackArrow = styled(BackArrowIcon)`
     position: absolute;
     left: 16px;
@@ -51,7 +52,6 @@ const BackArrow = styled(BackArrowIcon)`
     margin: 5px;
     fill: #ebac64;
 `
-
 const ChatContainer = styled.div`
     width: 100%;
     display: flex;
@@ -63,14 +63,12 @@ const ChatContainer = styled.div`
     align-items: center;
     justify-content: flex-start;
 `
-
 const Message = styled.div<MessageProps>`
     display: flex;
     margin-bottom: 12px;
     justify-content: ${props => (props.isUser ? "flex-end" : "flex-start")};
     width: 100%;
 `
-
 const MessageBubble = styled.div<MessageProps>`
     max-width: 70%;
     padding: 12px 17px 10px 17px;
@@ -85,7 +83,6 @@ const MessageBubble = styled.div<MessageProps>`
     margin-left: ${props => (props.isUser ? "10px" : "0")};
     margin-right: ${props => (props.isUser ? "0" : "10px")};
 `
-
 const Avatar = styled.div<MessageProps>`
     width: 45px;
     height: 45px;
@@ -229,7 +226,7 @@ export default function ChatBot() {
     }
 
     return (
-        <>
+        <Wrapper>
             <GlobalStyle />
             <Header>
                 <StyledLink to="/main/home">
@@ -261,6 +258,6 @@ export default function ChatBot() {
                 />
                 <SendIcon onClick={handleSendMessage} />
             </InputContainer>
-        </>
+        </Wrapper>
     )
 }
