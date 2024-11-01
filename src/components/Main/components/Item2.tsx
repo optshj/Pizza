@@ -49,12 +49,10 @@ interface BookProps {
     thumbnail: string
     contents: string
 }
-
 interface ImageItemProps {
     bookName: string
     medal?: ReactElement
 }
-
 function ImageItem({ bookName, medal }: ImageItemProps) {
     const [books, setBooks] = useState<BookProps>({
         title: "채식주의자",
