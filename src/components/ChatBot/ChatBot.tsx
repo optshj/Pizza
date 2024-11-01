@@ -60,9 +60,6 @@ const ChatContainer = styled.div`
     padding: clamp(8px, 4vw, 16px);
     box-sizing: border-box;
     overflow-y: auto;
-    overflow-x: hidden;
-    align-items: center;
-    justify-content: flex-start;
 `
 const Message = styled.div<MessageProps>`
     display: flex;
@@ -156,6 +153,16 @@ const SendIcon = styled(Sendsvg)`
 `
 
 export default function ChatBot() {
+    const [keyboardHeight, setKeyboardHeight] = useState(0)
+
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener("resize", () => {
+            let visualViewportHeight = window.visualViewport?.height || 0
+            let windowHeight = window.innerHeight
+            let keyboardHeight = windowHeight - visualViewportHeight
+            setKeyboardHeight(keyboardHeight)
+        })
+    }
     const [messages, setMessages] = useState<{ text: string; isUser: boolean }[]>([
         {
             text: "안녕! 난 삐짱이라고 해 무엇을 도와줄까?",
@@ -214,17 +221,6 @@ export default function ChatBot() {
             chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight
         }
     }, [messages])
-
-    const [keyboardHeight, setKeyboardHeight] = useState(0)
-
-    if (window.visualViewport) {
-        window.visualViewport.addEventListener("resize", () => {
-            let visualViewportHeight = window.visualViewport?.height || 0
-            let windowHeight = window.innerHeight
-            let keyboardHeight = windowHeight - visualViewportHeight
-            setKeyboardHeight(keyboardHeight)
-        })
-    }
 
     return (
         <Wrapper>

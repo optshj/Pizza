@@ -40,6 +40,7 @@ const Profile = styled.img`
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
+    z-index: 1500;
 `
 
 export default function MyStore() {
