@@ -24,11 +24,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
 `
-const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-`
 const Header = styled.div`
     width: 100%;
     height: 69.3px;
@@ -155,14 +150,18 @@ const SendIcon = styled(Sendsvg)`
 export default function ChatBot() {
     const [keyboardHeight, setKeyboardHeight] = useState(0)
 
-    if (window.visualViewport) {
-        window.visualViewport.addEventListener("resize", () => {
-            let visualViewportHeight = window.visualViewport?.height || 0
-            let windowHeight = window.innerHeight
-            let keyboardHeight = windowHeight - visualViewportHeight
-            setKeyboardHeight(keyboardHeight)
-        })
-    }
+    useEffect(() => {
+        const handleResize = () => {
+            const newKeyboardHeight =
+                window.innerHeight < document.documentElement.clientHeight
+                    ? document.documentElement.clientHeight - window.innerHeight
+                    : 0
+            setKeyboardHeight(newKeyboardHeight)
+        }
+
+        window.addEventListener("resize", handleResize)
+        return () => window.removeEventListener("resize", handleResize)
+    }, [])
     const [messages, setMessages] = useState<{ text: string; isUser: boolean }[]>([
         {
             text: "안녕! 난 삐짱이라고 해 무엇을 도와줄까?",
@@ -223,7 +222,7 @@ export default function ChatBot() {
     }, [messages])
 
     return (
-        <Wrapper>
+        <>
             <GlobalStyle />
             <Header>
                 <StyledLink to="/main/home">
@@ -255,6 +254,6 @@ export default function ChatBot() {
                 />
                 <SendIcon onClick={handleSendMessage} />
             </InputContainer>
-        </Wrapper>
+        </>
     )
 }
