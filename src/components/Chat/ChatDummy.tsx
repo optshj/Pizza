@@ -52,6 +52,7 @@ const GlobalStyle = createGlobalStyle`
 
 const Header = styled.div`
     width: 100%;
+    position: fixed;
     height: 69.3px;
     background-color: #ffffff;
     display: flex;
@@ -77,7 +78,7 @@ const BackArrow = styled(BackArrowIcon)`
 
 const ChatContainer = styled.div`
     width: 100%;
-    height: calc(100vh - 69.3px - 60px);
+    height: 100vh;
     display: flex;
     flex-direction: column;
     padding: clamp(8px, 4vw, 16px);

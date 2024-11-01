@@ -30,6 +30,7 @@ export default function Main() {
                 <Route path="/basket" element={<Basket />} />
                 <Route path="/search" element={<Search />} />
                 <Route path="/mystore" element={<MyStore />} />
+
                 <Route path="/chatbot" element={<ChatBot />} />
                 <Route path="/chat" element={<Chat />} />
                 <Route path="/chat/:id" element={<ChatRoom />} />
