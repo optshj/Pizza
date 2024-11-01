@@ -54,7 +54,6 @@ const BackArrow = styled(BackArrowIcon)`
 
 const ChatContainer = styled.div`
     width: 100%;
-    height: calc(100vh - 69.3px - 60px);
     display: flex;
     flex-direction: column;
     padding: clamp(8px, 4vw, 16px);
