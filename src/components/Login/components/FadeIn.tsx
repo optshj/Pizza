@@ -12,6 +12,7 @@ const fadeInUp = keyframes`
 `
 
 const Wrapper = styled.div<{ $delay?: string }>`
+    width: 100%;
     opacity: 0;
     animation: ${fadeInUp} 1s forwards;
     animation-delay: ${props => props.$delay || "0s"};

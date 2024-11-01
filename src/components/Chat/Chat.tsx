@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 
 import Header from "../Main/components/Header"
 import NavigationBar from "../Main/components/NavigationBar"
+import FadeIn from "../Login/components/FadeIn"
 
 // 더미 데이터
 const chatRooms = [
@@ -151,17 +152,19 @@ export default function ChatListPage() {
             <MainPageWrapper>
                 <ChatList>
                     {chatRooms.map(room => (
-                        <ChatItem key={room.id} to={`/main/chat/${room.id}`}>
-                            <ProfileCircle /> {/* 왼쪽에 동그라미 추가 */}
-                            <ChatInfo>
-                                <ChatTitle>{room.name}</ChatTitle>
-                                <ChatLastMessage>{room.lastMessage}</ChatLastMessage>
-                            </ChatInfo>
-                            <ChatTimeBadgeContainer>
-                                <ChatTime>{room.timeAgo}</ChatTime>
-                                {room.unreadCount > 0 && <UnreadBadge>{room.unreadCount}</UnreadBadge>}
-                            </ChatTimeBadgeContainer>
-                        </ChatItem>
+                        <FadeIn>
+                            <ChatItem key={room.id} to={`/main/chat/${room.id}`}>
+                                <ProfileCircle /> {/* 왼쪽에 동그라미 추가 */}
+                                <ChatInfo>
+                                    <ChatTitle>{room.name}</ChatTitle>
+                                    <ChatLastMessage>{room.lastMessage}</ChatLastMessage>
+                                </ChatInfo>
+                                <ChatTimeBadgeContainer>
+                                    <ChatTime>{room.timeAgo}</ChatTime>
+                                    {room.unreadCount > 0 && <UnreadBadge>{room.unreadCount}</UnreadBadge>}
+                                </ChatTimeBadgeContainer>
+                            </ChatItem>
+                        </FadeIn>
                     ))}
                 </ChatList>
             </MainPageWrapper>

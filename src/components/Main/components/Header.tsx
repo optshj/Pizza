@@ -12,6 +12,11 @@ const HeaderWrapper = styled.div`
     padding: 15px 21px;
     background-color: #ffffff;
 `
+const IconWrapper = styled.div`
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+`
 const Alarm = styled(Alarmsvg)`
     width: 45px;
     height: 45px;
@@ -32,14 +37,14 @@ export default function Header() {
     return (
         <HeaderWrapper>
             <Logo />
-            <div>
+            <IconWrapper>
                 <Link to="/main/alarm">
                     <Alarm />
                 </Link>
                 <Link to="/main/basket">
                     <Cart />
                 </Link>
-            </div>
+            </IconWrapper>
         </HeaderWrapper>
     )
 }
