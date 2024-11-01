@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect, useRef, useMemo } from "react"
 import { Link, useParams } from "react-router-dom"
 import styled, { createGlobalStyle } from "styled-components"
 import FaceYellow from "../../assets/character/FaceYellow.svg"
@@ -184,7 +184,7 @@ const StyledLink = styled(Link)`
 
 export default function ChatRoom() {
     const { id } = useParams<{ id: string }>()
-    const chatMessages: ChatMessage[] = id && chatData[id] ? chatData[id] : []
+    const chatMessages: ChatMessage[] = useMemo(() => (id && chatData[id] ? chatData[id] : []), [id])
     const [inputValue, setInputValue] = useState("")
     const [isComposing, setIsComposing] = useState(false)
     const chatContainerRef = useRef<HTMLDivElement>(null)

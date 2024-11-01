@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 
 import Header from "../Main/components/Header"
 import NavigationBar from "../Main/components/NavigationBar"
+import { useUserName } from "../../context/UserNameContext"
 
 // 마이페이지 요소들 정의
 const myPageItems = [
@@ -151,6 +152,7 @@ const NavBar = styled.div`
 `
 
 export default function MyPage() {
+    const { userName } = useUserName()
     return (
         <Wrapper>
             <Header />
@@ -159,7 +161,7 @@ export default function MyPage() {
                 <ProfileSection>
                     <ProfileCircle /> {/* 프로필 동그라미 */}
                     <ProfileInfo>
-                        <ProfileName>나폴리맛피자</ProfileName>
+                        <ProfileName>{userName}</ProfileName>
                         <ProfileId>viatoledo@kakao.com</ProfileId>
                     </ProfileInfo>
                 </ProfileSection>
