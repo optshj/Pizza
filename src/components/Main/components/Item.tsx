@@ -1,46 +1,36 @@
 import styled from "styled-components"
+import FadeIn from "../../Login/components/FadeIn"
 
 const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 350px;
-    height: 259px;
-    padding: 0;
-    gap: 5px;
-    justify-content: center;
-    align-items: center;
+    width: calc(100% - 48px);
+    margin-top: 20px;
 `
 const Rectangle = styled.div`
-    width: 85vw;
-    max-width: 350px;
+    width: 100%;
     height: 215px;
     background-color: #ffffff;
     border-radius: 23px;
 `
-const TitleText = styled.h2`
+const TitleText = styled.div`
+    width: 100%;
     font-size: 30px;
     font-weight: bold;
     color: #000000;
-    text-align: left;
-    letter-spacing: -0.2px;
-    width: 350px;
     height: 39px;
-    display: flex;
-    align-items: center;
-    margin: 0;
+    margin-bottom: 10px;
+    white-space: nowrap;
 `
 
 interface ItemProps {
-    text?: string
+    text: string
 }
-
-export default function Item({ text = "" }: ItemProps) {
+export default function Item({ text }: ItemProps) {
     return (
-        <>
-            <Wrapper>
+        <Wrapper>
+            <FadeIn delay="0.5s">
                 <TitleText>{text}</TitleText>
                 <Rectangle />
-            </Wrapper>
-        </>
+            </FadeIn>
+        </Wrapper>
     )
 }

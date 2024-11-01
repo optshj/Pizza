@@ -115,13 +115,15 @@ const MessageWrapper = styled.div<MessageProps>`
     flex-direction: ${props => (props.isUser ? "row-reverse" : "row")};
 `
 
-const InputContainer = styled.div`
+const InputContainer = styled.div<{ $keyboardHeight?: number }>`
     width: 100%;
-    height: 90px; // 높이 수정
+    max-width: 600px;
     display: flex;
     align-items: center;
     padding: 0 16px;
     box-sizing: border-box;
+    position: absolute;
+    bottom: ${props => Math.max(props.$keyboardHeight ?? 0, 0) + "px"};
     background-color: #ffffff; // 배경색 설정
 `
 
@@ -136,6 +138,7 @@ const TextInput = styled.input`
     outline: none;
     box-sizing: border-box;
     color: #333;
+    margin: 20px 0;
 `
 
 const SendButton = styled.button`
@@ -149,6 +152,7 @@ const SendButton = styled.button`
     border-radius: 22px;
     cursor: pointer;
     outline: none;
+    white-space: nowrap;
 `
 
 const StyledLink = styled(Link)`
@@ -220,6 +224,17 @@ export default function ChatBot() {
         }
     }, [messages])
 
+    const [keyboardHeight, setKeyboardHeight] = useState(0)
+
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener("resize", () => {
+            let visualViewportHeight = window.visualViewport?.height || 0
+            let windowHeight = window.innerHeight
+            let keyboardHeight = windowHeight - visualViewportHeight
+            setKeyboardHeight(keyboardHeight)
+        })
+    }
+
     return (
         <>
             <GlobalStyle />
@@ -239,7 +254,7 @@ export default function ChatBot() {
                     </Message>
                 ))}
             </ChatContainer>
-            <InputContainer>
+            <InputContainer $keyboardHeight={keyboardHeight}>
                 <TextInput
                     type="text"
                     value={inputValue}

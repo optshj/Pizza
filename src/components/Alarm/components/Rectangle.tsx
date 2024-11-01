@@ -1,5 +1,5 @@
-
-import styled from "styled-components";
+import styled from "styled-components"
+import FadeIn from "../../Login/components/FadeIn"
 
 const RectangleWrapper = styled.div`
     display: flex;
@@ -14,7 +14,7 @@ const RectangleWrapper = styled.div`
     margin-left: 21px;
     margin-right: 21px;
     gap: 14px;
-`;
+`
 
 const Icon = styled.div`
     width: 50px;
@@ -22,17 +22,19 @@ const Icon = styled.div`
     background-color: #888888;
     border-radius: 10px;
     margin-left: 20px;
-`;
+`
 
 type RectangleProps = {
-    children: React.ReactNode;
-};
+    children: React.ReactNode
+}
 
 const Rectangle: React.FC<RectangleProps> = ({ children }) => (
-    <RectangleWrapper>
-        <Icon />
-        {children}
-    </RectangleWrapper>
-);
+    <FadeIn>
+        <RectangleWrapper>
+            <Icon />
+            {children}
+        </RectangleWrapper>
+    </FadeIn>
+)
 
-export default Rectangle;
+export default Rectangle
