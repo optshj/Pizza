@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Pizza/static/css/main.3bf03af3.css",
-    "main.js": "/Pizza/static/js/main.9c0d6ae4.js",
+    "main.js": "/Pizza/static/js/main.04185536.js",
     "static/js/453.f33d9648.chunk.js": "/Pizza/static/js/453.f33d9648.chunk.js",
     "static/media/image1.jpg": "/Pizza/static/media/image1.8871d85ceb663a0e050b.jpg",
     "static/media/image5.jpg": "/Pizza/static/media/image5.6d07452b9e93bc878061.jpg",
@@ -22,6 +22,8 @@
     "static/media/emptyPizza.svg": "/Pizza/static/media/emptyPizza.d60ce3352f8a05efa9bc70e17b8c9d01.svg",
     "static/media/LogoTransverse.svg": "/Pizza/static/media/LogoTransverse.9b6df9607d297e987a7ff383b32dce66.svg",
     "static/media/feed-svgrepo-com.svg": "/Pizza/static/media/feed-svgrepo-com.568b0b784f2bcb60df22e95a866deb82.svg",
+    "static/media/4ThPlaceMedal.svg": "/Pizza/static/media/4ThPlaceMedal.59807875ad806dcdc833ba4b63103164.svg",
+    "static/media/5ThPlaceMedal.svg": "/Pizza/static/media/5ThPlaceMedal.c069bafadea0306d9ad0a9602797a03e.svg",
     "static/media/cupper.svg": "/Pizza/static/media/cupper.f2dbf1392e23d04ef755a43f8aa792bd.svg",
     "static/media/silver.svg": "/Pizza/static/media/silver.87aacbbcbb5800c964fca12b7a62a80a.svg",
     "static/media/gold.svg": "/Pizza/static/media/gold.7859d6921fd9e19b62e003e6b9da469d.svg",
@@ -44,11 +46,11 @@
     "static/media/CheckCirlceDisable.svg": "/Pizza/static/media/CheckCirlceDisable.d4f44c188a3c9c67d5e75bb35904eb58.svg",
     "static/media/previousArrowBackSvgrepoCom.svg": "/Pizza/static/media/previousArrowBackSvgrepoCom.9c872e1f7d1bbd66d836b5da2054b038.svg",
     "main.3bf03af3.css.map": "/Pizza/static/css/main.3bf03af3.css.map",
-    "main.9c0d6ae4.js.map": "/Pizza/static/js/main.9c0d6ae4.js.map",
+    "main.04185536.js.map": "/Pizza/static/js/main.04185536.js.map",
     "453.f33d9648.chunk.js.map": "/Pizza/static/js/453.f33d9648.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3bf03af3.css",
-    "static/js/main.9c0d6ae4.js"
+    "static/js/main.04185536.js"
   ]
 }
