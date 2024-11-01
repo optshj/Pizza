@@ -7,6 +7,8 @@ import FadeIn from "../../Login/components/FadeIn"
 import { ReactComponent as Gold } from "../../../assets/icon/gold.svg"
 import { ReactComponent as Silver } from "../../../assets/icon/silver.svg"
 import { ReactComponent as Cupper } from "../../../assets/icon/cupper.svg"
+import { ReactComponent as Forth } from "../../../assets/icon/4ThPlaceMedal.svg"
+import { ReactComponent as Fifth } from "../../../assets/icon/5ThPlaceMedal.svg"
 
 const Wrapper = styled.div`
     width: calc(100% - 48px);
@@ -98,6 +100,10 @@ export default function Item2({ text, bookNames }: ItemProps) {
                             medal = <Silver />
                         } else if (index === 2) {
                             medal = <Cupper />
+                        } else if (index === 3) {
+                            medal = <Forth />
+                        } else if (index === 4) {
+                            medal = <Fifth />
                         }
 
                         return <ImageItem key={index} bookName={bookName} medal={medal} />

@@ -37,6 +37,7 @@ const Items = styled.img`
 const DetailWrapper = styled.div`
     display: flex;
     flex-direction: column;
+    margin-top: 5px;
 `
 const Title = styled.div`
     font-size: 16px;
