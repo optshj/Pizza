@@ -18,7 +18,7 @@ const HeaderWrapper = styled.div`
     align-items: center;
     background-color: #ffffff;
     font-size: 28px;
-    font-weight: 700;
+    font-weight: bold;
     color: rgba(205, 61, 63, 1);
     justify-content: center;
     position: relative;

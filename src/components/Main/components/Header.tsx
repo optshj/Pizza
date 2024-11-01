@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
 import { ReactComponent as Logosvg } from "../../../assets/logo/LogoTransverse.svg"
-import { ReactComponent as Alarmsvg } from "../../../assets/icon/bell-svgrepo-com-2.svg"
-import { ReactComponent as Cartsvg } from "../../../assets/icon/shopping-cart-svgrepo-com.svg"
+import { ReactComponent as Alarmsvg } from "../../../assets/icon/bell-svgrepo-com-3.svg"
+import { ReactComponent as Cartsvg } from "../../../assets/icon/shopping-cart-svgrepo-com-3.svg"
 import { Link } from "react-router-dom"
 
 const HeaderWrapper = styled.div`

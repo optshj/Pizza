@@ -23,7 +23,7 @@ const Wrapper = styled.div`
 const Icon = styled(PreviousIcon)``
 const Text = styled.div`
     font-size: 25px;
-    font-weight: 700;
+    font-weight: bold;
     color: #000;
 `
 export default function Empty() {
