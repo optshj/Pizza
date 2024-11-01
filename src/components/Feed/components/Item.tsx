@@ -153,7 +153,7 @@ export default function Item({ userName, time, bookName, isLiked, delay = "0s" }
                 console.error(e)
             })
     }, [bookName])
-
+    const authorText = books.authors.length > 1 ? `${books.authors[0]} 등` : books.authors[0]
     return (
         <FadeIn delay={delay}>
             <Wrapper>
@@ -171,7 +171,7 @@ export default function Item({ userName, time, bookName, isLiked, delay = "0s" }
                     <BookImage src={books.thumbnail} alt={"bookImage"} loading="lazy" />
                     <FeedWrapper>
                         <BookName>{books.title}</BookName>
-                        <AuthorName>{books.authors} 지음</AuthorName>
+                        <AuthorName>{authorText} 지음</AuthorName>
                         <Text>{books.contents}</Text>
 
                         <IconWrapper>

@@ -5,6 +5,7 @@ import Home from "../components/Main/Main"
 import Feed from "../components/Feed/Feed"
 import Alarm from "../components/Alarm/Alarm"
 import Basket from "../components/Basket/Basket"
+import Search from "../components/Search/Search"
 
 const Wrapper = styled.div`
     width: 100%;
@@ -22,6 +23,7 @@ export default function Main() {
                 <Route path="/feed" element={<Feed />} />
                 <Route path="/alarm" element={<Alarm />} />
                 <Route path="/basket" element={<Basket />} />
+                <Route path="/search" element={<Search />} />
             </Routes>
         </Wrapper>
     )

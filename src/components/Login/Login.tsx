@@ -51,11 +51,13 @@ export default function Login() {
     const navigate = useNavigate()
 
     useEffect(() => {
-        if (query.get("code")) {
+        const username = localStorage.getItem("username")
+        if (username) {
+            navigate("/main/home")
+        } else if (query.get("code")) {
             navigate("./name")
         }
     }, [query, navigate])
-
     const onClick = () => {
         window.location.href = link
     }

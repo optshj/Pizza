@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom"
 import styled from "styled-components"
 
 import Header from "./components/Header"
@@ -6,6 +7,9 @@ import Item from "./components/Item"
 
 import { ReactComponent as Searchsvg } from "../../assets/icon/search-svgrepo-com.svg"
 import { ReactComponent as Ppizzangsvg } from "../../assets/character/FaceRed.svg"
+
+import { useSearch } from "../../context/SearchContext"
+import { useState } from "react"
 
 const Wrapper = styled.div`
     display: flex;
@@ -101,13 +105,35 @@ const PpizzangBot = styled.button`
 `
 
 export default function Main() {
+    const { setSearchTerm, searchTerm } = useSearch()
+    const [serachText, setSearchText] = useState<string>("")
+
+    const navigate = useNavigate()
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchText(e.target.value)
+    }
+    const handleSearch = () => {
+        setSearchTerm(serachText)
+        setSearchText("")
+        if (searchTerm.trim()) {
+            navigate("/main/search")
+        }
+    }
+
     return (
         <Wrapper>
             <Header />
             <MainPageWrapper>
                 <SearchWrapper>
-                    <Input placeholder="지금 읽고 싶은 책이 있나요?" />
-                    <SearchIcon>
+                    <Input
+                        placeholder="지금 읽고 싶은 책이 있나요?"
+                        onChange={onChange}
+                        value={serachText}
+                        onKeyPress={e => {
+                            if (e.key === "Enter") handleSearch()
+                        }}
+                    />
+                    <SearchIcon onClick={handleSearch}>
                         <Searchsvg />
                     </SearchIcon>
                 </SearchWrapper>
