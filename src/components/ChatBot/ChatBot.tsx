@@ -26,12 +26,13 @@ const GlobalStyle = createGlobalStyle`
 `
 const Header = styled.div`
     width: 100%;
+    max-width: 600px;
+    position: fixed;
     height: 69.3px;
     background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
     color: #cb3d3f;
     font-size: 25px;
     font-weight: bold;

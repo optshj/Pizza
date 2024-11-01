@@ -37,6 +37,7 @@ const Items = styled.img`
 const DetailWrapper = styled.div`
     display: flex;
     flex-direction: column;
+    margin-top: 5px;
 `
 const Title = styled.div`
     font-size: 16px;
@@ -74,7 +75,7 @@ function ImageItem({ bookName }: { bookName: string }) {
 
     return (
         <Container>
-            <Items src={books.thumbnail} />
+            <Items src={books.thumbnail} loading="lazy" />
             <DetailWrapper>
                 <Title>{books.title}</Title>
                 <Author>{books.authors}</Author>

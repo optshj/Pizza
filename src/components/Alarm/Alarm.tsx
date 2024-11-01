@@ -2,8 +2,7 @@ import styled from "styled-components"
 import Rectangle from "./components/Rectangle"
 import { Link } from "react-router-dom"
 import { ReactComponent as PreviousIcon } from "../../assets/icon/previousArrowBackSvgrepoCom.svg"
-
-import { prs1, prs2, prs3 } from "./components/TextPresets"
+import alarmData from "../../data/alarm.json"
 
 const Wrapper = styled.div`
     display: flex;
@@ -54,6 +53,7 @@ const MainPageWrapper = styled.div`
 `
 
 export default function Alarm() {
+    const texts = alarmData.text
     return (
         <Wrapper>
             <HeaderWrapper>
@@ -63,9 +63,11 @@ export default function Alarm() {
                 알림
             </HeaderWrapper>
             <MainPageWrapper>
-                <Rectangle>{prs1}</Rectangle>
-                <Rectangle>{prs2}</Rectangle>
-                <Rectangle>{prs3}</Rectangle>
+                {texts.map((text, index) => (
+                    <Rectangle key={index} delay={index}>
+                        {text}
+                    </Rectangle>
+                ))}
             </MainPageWrapper>
         </Wrapper>
     )

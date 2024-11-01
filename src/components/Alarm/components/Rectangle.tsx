@@ -1,7 +1,17 @@
-import styled from "styled-components"
-import FadeIn from "../../Login/components/FadeIn"
+import styled, { keyframes } from "styled-components"
 
-const RectangleWrapper = styled.div`
+const fadeInUp = keyframes`
+    from {
+        opacity: 0;
+        transform: translateY(100vh);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+`
+
+const RectangleWrapper = styled.div<{ $delay?: string }>`
     display: flex;
     width: 90vw;
     min-width: 300px;
@@ -14,6 +24,9 @@ const RectangleWrapper = styled.div`
     margin-left: 21px;
     margin-right: 21px;
     gap: 14px;
+    opacity: 0;
+    animation: ${fadeInUp} 1s forwards;
+    animation-delay: ${props => props.$delay || "0s"};
 `
 
 const Icon = styled.div`
@@ -23,18 +36,26 @@ const Icon = styled.div`
     border-radius: 10px;
     margin-left: 20px;
 `
+const Text = styled.div`
+    width: 264px;
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    white-space: pre-line; /* 기본 줄바꿈 허용 */
+    word-wrap: break-word; /* 단어가 길 경우 줄바꿈 */
+`
 
-type RectangleProps = {
+interface RectangleProps {
     children: React.ReactNode
+    delay: number
 }
 
-const Rectangle: React.FC<RectangleProps> = ({ children }) => (
-    <FadeIn>
-        <RectangleWrapper>
+export default function Rectangle({ children, delay }: RectangleProps) {
+    return (
+        <RectangleWrapper $delay={`${delay * 0.15}s`}>
             <Icon />
-            {children}
+            <Text>{children}</Text>
         </RectangleWrapper>
-    </FadeIn>
-)
-
-export default Rectangle
+    )
+}
