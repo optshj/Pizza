@@ -40,6 +40,7 @@ const Profile = styled.img`
     z-index: 1500;
 `
 const ProfileWrapper = styled.div`
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
