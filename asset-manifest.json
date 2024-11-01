@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Pizza/static/css/main.3bf03af3.css",
-    "main.js": "/Pizza/static/js/main.53879857.js",
+    "main.js": "/Pizza/static/js/main.c4dea7a2.js",
     "static/js/453.f33d9648.chunk.js": "/Pizza/static/js/453.f33d9648.chunk.js",
     "static/media/image1.jpg": "/Pizza/static/media/image1.8871d85ceb663a0e050b.jpg",
     "static/media/image5.jpg": "/Pizza/static/media/image5.6d07452b9e93bc878061.jpg",
@@ -21,6 +21,7 @@
     "static/media/book3.jpg": "/Pizza/static/media/book3.30c2c16739ee8ec77eea.jpg",
     "static/media/emptyPizza.svg": "/Pizza/static/media/emptyPizza.d60ce3352f8a05efa9bc70e17b8c9d01.svg",
     "static/media/LogoTransverse.svg": "/Pizza/static/media/LogoTransverse.9b6df9607d297e987a7ff383b32dce66.svg",
+    "static/media/pizzalv3.svg": "/Pizza/static/media/pizzalv3.ca4818f9a68005828f39bd8a304fc8c1.svg",
     "static/media/feed-svgrepo-com.svg": "/Pizza/static/media/feed-svgrepo-com.568b0b784f2bcb60df22e95a866deb82.svg",
     "static/media/4ThPlaceMedal.svg": "/Pizza/static/media/4ThPlaceMedal.59807875ad806dcdc833ba4b63103164.svg",
     "static/media/5ThPlaceMedal.svg": "/Pizza/static/media/5ThPlaceMedal.c069bafadea0306d9ad0a9602797a03e.svg",
@@ -35,6 +36,8 @@
     "static/media/store-svgrepo-com.svg": "/Pizza/static/media/store-svgrepo-com.f36185b57e07aaa24b475dfaf39a1671.svg",
     "static/media/previous-arrow-back-svgrepo-com.svg": "/Pizza/static/media/previous-arrow-back-svgrepo-com.86978f95ecbfd3a2bb625e0e95b97f14.svg",
     "static/media/user-svgrepo-com.svg": "/Pizza/static/media/user-svgrepo-com.d447f5ff8a93f8a00b643651573c0803.svg",
+    "static/media/fullstar.svg": "/Pizza/static/media/fullstar.22a03fe7b906912eba20ae010f61bfe7.svg",
+    "static/media/emptystar.svg": "/Pizza/static/media/emptystar.4aa69571492afacc1e36e09290a33907.svg",
     "index.html": "/Pizza/index.html",
     "static/media/home-2-svgrepo-com.svg": "/Pizza/static/media/home-2-svgrepo-com.9fcd935bfc717a4977061efe825ab42e.svg",
     "static/media/send.svg": "/Pizza/static/media/send.38f6dd96dc239f76467f979bd8bcfe1d.svg",
@@ -45,12 +48,13 @@
     "static/media/CheckCirlceActive.svg": "/Pizza/static/media/CheckCirlceActive.bc9e6a9ce62710523dc805dbcd3b23f8.svg",
     "static/media/CheckCirlceDisable.svg": "/Pizza/static/media/CheckCirlceDisable.d4f44c188a3c9c67d5e75bb35904eb58.svg",
     "static/media/previousArrowBackSvgrepoCom.svg": "/Pizza/static/media/previousArrowBackSvgrepoCom.9c872e1f7d1bbd66d836b5da2054b038.svg",
+    "static/media/plus.svg": "/Pizza/static/media/plus.27bb84aa700d0f1cf4afdf6e5671e5f1.svg",
     "main.3bf03af3.css.map": "/Pizza/static/css/main.3bf03af3.css.map",
-    "main.53879857.js.map": "/Pizza/static/js/main.53879857.js.map",
+    "main.c4dea7a2.js.map": "/Pizza/static/js/main.c4dea7a2.js.map",
     "453.f33d9648.chunk.js.map": "/Pizza/static/js/453.f33d9648.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3bf03af3.css",
-    "static/js/main.53879857.js"
+    "static/js/main.c4dea7a2.js"
   ]
 }
