@@ -29,10 +29,11 @@ export default function Signup() {
     const navigate = useNavigate()
 
     useEffect(() => {
+        localStorage.setItem("username", userName) //로컬스토리지에 유저네임 저장
+
         function randomInRange(min: number, max: number) {
             return Math.random() * (max - min) + min
         }
-
         confetti({
             angle: 90,
             spread: randomInRange(50, 70),
@@ -45,7 +46,7 @@ export default function Signup() {
         }, 5000)
 
         return () => clearTimeout(timer)
-    }, [navigate])
+    }, [navigate, userName])
 
     return (
         <LoginWrapper>
