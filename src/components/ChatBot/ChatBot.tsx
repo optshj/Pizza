@@ -77,7 +77,7 @@ const MessageBubble = styled.div<MessageProps>`
     background-color: ${props => (props.isUser ? "#cb3d3f" : "#ebac64")};
     color: white;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: bold;
     line-height: 1.5;
     border-radius: ${props => (props.isUser ? "20px 20px 4px 20px" : "20px 20px 20px 4px")};
     box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.16);
